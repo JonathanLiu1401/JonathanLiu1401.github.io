@@ -1,6 +1,6 @@
 # jonathanliu1401.github.io
 
-Personal website for **Jonathan Liu** — UW ECE undergraduate targeting analog IC design
+Personal website for **Jonathan Liu** - UW ECE undergraduate targeting analog IC design
 (BSMS). Static single-page site built with plain HTML, CSS, and a tiny bit of vanilla JS.
 No build step, no frameworks, no dependencies.
 
@@ -17,7 +17,7 @@ jonathanliu1401.github.io/
   script.js                     # theme toggle, mobile nav, year stamp
   assets/                       # drop project images / static assets here
     .gitkeep
-  Jonathan_Liu_Resume.pdf       # (add this — referenced by the Resume buttons)
+  Jonathan_Liu_Resume.pdf       # (add this - referenced by the Resume buttons)
   README.md
 ```
 
@@ -28,7 +28,7 @@ jonathanliu1401.github.io/
 The repo name **must** match your username so Pages serves it at the apex URL.
 
 1. Create a new **public** GitHub repo named exactly `JonathanLiu1401.github.io`.
-   Do not initialize it with a README — keep it empty.
+   Do not initialize it with a README - keep it empty.
 
 2. From inside this folder, run:
 
@@ -44,7 +44,7 @@ The repo name **must** match your username so Pages serves it at the apex URL.
 3. Enable Pages: **Repo Settings → Pages → Source: `main` branch, `/` (root)**.
    The site goes live in ~1 minute at <https://jonathanliu1401.github.io/>.
 
-Future updates: edit, commit, push — Pages redeploys automatically.
+Future updates: edit, commit, push - Pages redeploys automatically.
 
 ---
 
@@ -56,7 +56,7 @@ From this folder:
 python -m http.server 8000
 ```
 
-Then visit <http://localhost:8000>. You can also just double-click `index.html` —
+Then visit <http://localhost:8000>. You can also just double-click `index.html` -
 everything is fully relative.
 
 ---
@@ -100,14 +100,14 @@ If you want a different filename, search-and-replace `Jonathan_Liu_Resume.pdf` i
 
 Copy any `<article class="project-card">` block, change the `<h3>`, the
 description, the `.tag-list` items, and the `.project-date`. The grid is
-auto-balancing — no other edits needed.
+auto-balancing - no other edits needed.
 
 ---
 
 ## Notes
 
 - No analytics / tracking scripts. None.
-- All icons are inline SVG — no external icon CDN, works offline.
+- All icons are inline SVG - no external icon CDN, works offline.
 - Dark-mode preference persists in `localStorage` under the key `theme`.
 - Print stylesheet hides nav and renders a clean resume-style document.
 - Tested to be Lighthouse-friendly: semantic landmarks, alt text, aria labels,

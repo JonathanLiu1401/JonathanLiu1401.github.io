@@ -1,4 +1,4 @@
-/* Jonathan Liu — site script
+/* Jonathan Liu - site script
    Concerns:
      1. Dark-mode toggle + localStorage persistence
      2. Mobile hamburger nav
@@ -37,7 +37,7 @@
       try {
         localStorage.setItem("theme", next);
       } catch (e) {
-        /* storage unavailable — silent */
+        /* storage unavailable - silent */
       }
     });
   }

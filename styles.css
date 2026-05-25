@@ -1,5 +1,5 @@
 /* =========================================================
-   Jonathan Liu — personal site
+   Jonathan Liu - personal site
    Plain CSS, mobile-first, dark-mode via [data-theme="dark"]
    ========================================================= */
 
@@ -593,7 +593,7 @@ html[data-theme="dark"] .tag-list li { background: #1c1c20; }
 }
 
 /* ============================================================
-   Print stylesheet — clean resume-style fallback
+   Print stylesheet - clean resume-style fallback
    ============================================================ */
 @media print {
   :root {
