@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonathan Liu — Analog IC Designer in Training | UW ECE '27</title>
+  <meta name="description" content="Jonathan Liu — University of Washington ECE undergraduate focused on analog IC design, mixed-signal systems, and custom hardware. Cadence Virtuoso, STM32, Altium, FPGA." />
+  <meta name="author" content="Jonathan Liu" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jonathan Liu — Analog IC Designer in Training" />
+  <meta property="og:description" content="UW ECE undergraduate focused on analog IC design and mixed-signal systems. Currently designing a 5T-OTA-based CMOS op-amp in 45nm and leading a custom drone flight controller." />
+  <meta property="og:url" content="https://jonathanliu1401.github.io/" />
+  <meta property="og:site_name" content="Jonathan Liu" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Jonathan Liu — Analog IC Designer in Training" />
+  <meta name="twitter:description" content="UW ECE undergraduate focused on analog IC design and mixed-signal systems." />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='65' font-size='60' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-weight='700' fill='%230066cc'%3EJL%3C/text%3E%3C/svg%3E" />
+
+  <!-- Apply persisted theme before first paint to avoid FOUC -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- Inline SVG icon sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="i-email" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M3 7l9 6 9-6" />
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/>
+    </symbol>
+    <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.23c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.72.08-.72 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49.99.1-.77.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3z"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </symbol>
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </symbol>
+    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <polyline points="15 3 21 3 21 9" />
+      <line x1="10" y1="14" x2="21" y2="3" />
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </symbol>
+  </svg>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand" aria-label="Jonathan Liu — home">
+        <span class="brand-mark">JL</span>
+        <span class="brand-name">Jonathan Liu</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu" /></svg>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+            <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+            <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+          </button>
+          <a class="btn btn-resume" href="./Jonathan_Liu_Resume.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+            <span>Resume</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Seattle, WA</p>
+        <h1 class="hero-name">Jonathan Liu</h1>
+        <p class="hero-tagline">Analog IC Designer in Training&nbsp;&nbsp;|&nbsp;&nbsp;UW ECE '27</p>
+        <p class="hero-pitch">
+          Undergraduate ECE student at the University of Washington passionate about analog
+          circuit design, mixed-signal systems, and bringing custom silicon to life — from
+          schematic to layout.
+        </p>
+        <ul class="hero-contacts" aria-label="Contact links">
+          <li>
+            <a href="mailto:jliu1401@uw.edu" aria-label="Email Jonathan">
+              <svg class="icon" aria-hidden="true"><use href="#i-email" /></svg>
+              <span>jliu1401@uw.edu</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+12065890963" aria-label="Call Jonathan">
+              <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>
+              <span>+1 206-589-0963</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/jonathan-liu-202081252" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+              <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/JonathanLiu1401" target="_blank" rel="noopener" aria-label="GitHub profile">
+              <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="prose">
+          <img src="https://avatars.githubusercontent.com/u/56282982?v=4" alt="Jonathan Liu profile photo" width="140" height="140" style="float:right;width:140px;height:140px;border-radius:50%;margin:0 0 1rem 1.5rem;border:1px solid var(--border);object-fit:cover;" />
+          <p>
+            I'm an Electrical and Computer Engineering undergraduate at the University of
+            Washington (GPA 3.93), targeting a BSMS with a focus on analog IC and
+            mixed-signal design. I'm currently designing a 5T-OTA-based CMOS operational
+            amplifier in 45nm using Cadence Virtuoso (schematic and layout) and ADE
+            Assembler, sizing devices from first-principles small-signal analysis and
+            validating with AC, DC, and transient sweeps in ADE Explorer.
+          </p>
+          <p>
+            On the systems side, I lead the Husky Robotics drone subteam, where I am
+            designing a custom STM32H743-based flight controller in Altium from schematic
+            to PCB — integrating current sensing, USB-UART debug, and multi-protocol I/O
+            (UART, CAN, SPI, I2C, USB, Ethernet) — alongside two supporting boards (ESC and
+            PDB). I enjoy work that spans the full hardware stack: hand-sized transistors,
+            embedded firmware, and the empirical tests that close the loop.
+          </p>
+          <p>
+            I'm looking for analog, mixed-signal, and semiconductor design opportunities
+            where I can keep building from first principles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <article>
+              <header class="timeline-head">
+                <h3>Undergraduate Research Assistant</h3>
+                <p class="timeline-org">Sensors, Energy, and Automation Laboratory (SEAL)</p>
+                <p class="timeline-meta"><span>Jan 2026 &ndash; Present</span><span>Seattle, WA</span></p>
+              </header>
+              <ul class="bullets">
+                <li>Developed random forest classification models on PPG biosignals to detect fatigue from heart biometrics in safety-critical environments.</li>
+                <li>Designed custom 3D-printed PCB mounts in OpenSCAD for wearable body-sensor placement and integration.</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <article>
+              <header class="timeline-head">
+                <h3>
+                  Lead <span class="role-sep">|</span> Drone Hardware Engineer
+                  <a class="ext-link" href="https://github.com/JonathanLiu1401/UWDRONE" target="_blank" rel="noopener" aria-label="UWDRONE repository on GitHub">
+                    <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                  </a>
+                </h3>
+                <p class="timeline-org">Husky Robotics &mdash; Drone Subteam</p>
+                <p class="timeline-meta">
+                  <span>Lead: Nov 2025 &ndash; Present</span>
+                  <span>Hardware Engineer: Oct 2024 &ndash; Present</span>
+                  <span>Seattle, WA</span>
+                </p>
+              </header>
+              <ul class="bullets">
+                <li>Lead a 20+ member subteam; manage the full development lifecycle of three custom PCBs (Flight Controller V0.1, ESC, PDB), BOM selection, and design reviews.</li>
+                <li>Designing the Husky Robotics Drone Flight Controller V0.1 from scratch in Altium around the STM32H743VGT6 &mdash; integrated INA219 current sensing, CP2102N USB-UART debug bridge, ESD-protected USB-C, 25&nbsp;MHz crystal, 6-pin JST-GH power input, and full UART / CAN / SPI / I2C / USB / Ethernet routing.</li>
+                <li>Writing peripheral drivers in STM32CubeIDE / CubeMX using the STM32 HAL.</li>
+                <li>Built an automated thrust stand with hardware-in-the-loop (HIL) test fixtures, improving propulsion efficiency by 25%.</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <article>
+              <header class="timeline-head">
+                <h3>Autonomous Systems Engineering Intern</h3>
+                <p class="timeline-org">ARIDGE (XPeng AEROHT)</p>
+                <p class="timeline-meta"><span>July &ndash; Sep 2025</span><span>Guangzhou, China</span></p>
+              </header>
+              <ul class="bullets">
+                <li>Wrote Python computer-vision models for autonomous landing-zone classification and document categorization.</li>
+                <li>Validated LiDAR point cloud and imagery data to verify sensor-fusion integrity for autonomous navigation pipelines.</li>
+                <li>Communicated technical updates across cross-functional engineering teams.</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+
+          <article class="project-card">
+            <header>
+              <h3>5T-OTA-Based CMOS Operational Amplifier</h3>
+              <p class="project-sub">Cadence Virtuoso (Schematic &amp; Layout) &middot; ADE Assembler &middot; 45nm CMOS</p>
+            </header>
+            <p>
+              Designed and optimized a CMOS operational amplifier built around a
+              5-transistor OTA input core in 45nm using Cadence Virtuoso. Achieved
+              <strong>13.7&nbsp;dB</strong> DC gain, <strong>629&nbsp;MHz</strong> 3-dB
+              bandwidth, <strong>3.05&nbsp;GHz</strong> gain-bandwidth product, and
+              <strong>0.889&nbsp;V</strong> output swing on a 1&nbsp;V supply. Hand-sized
+              the differential pair, current-mirror load, tail current source, and output
+              stage from first-principles gm/ro analysis; ran AC, DC, and transient
+              analyses in ADE Explorer; used ADE Assembler (Brent-Powell optimizer) for
+              multi-objective sizing under all-saturation constraints.
+            </p>
+            <ul class="tag-list" aria-label="Tags">
+              <li>Cadence Virtuoso</li>
+              <li>ADE Assembler</li>
+              <li>45nm CMOS</li>
+              <li>Op-Amp</li>
+              <li>Analog IC</li>
+            </ul>
+            <p class="project-date">May 2026</p>
+          </article>
+
+          <article class="project-card">
+            <header>
+              <h3>Adjustable AC-DC Boost Converter</h3>
+              <p class="project-sub">Breadboarded &middot; LTspice &middot; Feedback Control</p>
+            </header>
+            <p>
+              Designed, fully simulated in LTspice, <strong>and breadboarded</strong> an
+              AC-DC converter that boosts &plusmn;7.5&nbsp;VAC line input to a
+              continuously adjustable <strong>+10&ndash;20&nbsp;VDC</strong> output
+              (0&ndash;1&nbsp;mA load) with <strong>&lt;100&nbsp;mV</strong> output
+              ripple. Topology: full-wave bridge rectifier + LC filter &rarr; 2N7000 boost
+              converter clocked by an NE555 at ~100&nbsp;kHz &rarr; op-amp feedback
+              regulator with a 1N4744 zener reference. Validated in simulation with
+              parametric load sweeps and .meas-based automated measurement, then built and
+              verified on hardware.
+            </p>
+            <ul class="tag-list" aria-label="Tags">
+              <li>Breadboard</li>
+              <li>LTspice</li>
+              <li>Boost Converter</li>
+              <li>Analog Power</li>
+              <li>Feedback Control</li>
+            </ul>
+            <p class="project-date">May 2026</p>
+          </article>
+
+          <article class="project-card">
+            <header>
+              <h3>Analog Audio Mixer (3-band Active Equalizer)</h3>
+              <p class="project-sub">Op-Amps &middot; LTspice &middot; Analog Filters</p>
+            </header>
+            <p>
+              Designed and built a three-band active audio equalizer using LM348 op-amps;
+              verified theoretical transfer functions through full-system LTspice
+              simulation.
+            </p>
+            <ul class="tag-list" aria-label="Tags">
+              <li>Op-Amps</li>
+              <li>LTspice</li>
+              <li>Analog Filters</li>
+            </ul>
+            <p class="project-date">Mar 2026</p>
+          </article>
+
+          <article class="project-card">
+            <header>
+              <h3>
+                FPGARhythm
+                <a class="ext-link" href="https://github.com/JonathanLiu1401/FPGAosumania" target="_blank" rel="noopener" aria-label="FPGARhythm on GitHub">
+                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                </a>
+              </h3>
+              <p class="project-sub">SystemVerilog &middot; Intel FPGA &middot; VGA</p>
+            </header>
+            <p>
+              Hardware rhythm game in SystemVerilog on an Intel FPGA. Processes user
+              inputs and renders cascading notes via VGA output.
+            </p>
+            <ul class="tag-list" aria-label="Tags">
+              <li>SystemVerilog</li>
+              <li>FPGA</li>
+              <li>VGA</li>
+            </ul>
+            <p class="project-date">Mar 2026</p>
+          </article>
+
+          <article class="project-card">
+            <header>
+              <h3>
+                Trading Intelligence
+                <a class="ext-link" href="https://github.com/JonathanLiu1401/trading-intelligence" target="_blank" rel="noopener" aria-label="Trading Intelligence on GitHub">
+                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                </a>
+              </h3>
+              <p class="project-sub">Python &middot; SQLite &middot; LLM Systems</p>
+            </header>
+            <p>
+              AI-powered financial intelligence monorepo with two cooperating daemons:
+              <strong>digital-intern</strong> ingests from 21 news collectors and scores
+              ~1.8M articles in SQLite (WAL) via a GPU "ArticleNet" model with an
+              LLM-tiered labeling pipeline; <strong>paper-trader</strong> runs an Opus
+              4.7-driven decision engine every 30 minutes. Two Flask dashboards (ports
+              8080 / 8090), 28 analytics modules, deployed as systemd microservices.
+            </p>
+            <ul class="tag-list" aria-label="Tags">
+              <li>Python</li>
+              <li>PyTorch</li>
+              <li>LLMs</li>
+              <li>Systems</li>
+            </ul>
+            <p class="project-date">2025 &ndash; Present</p>
+          </article>
+
+          <article class="project-card">
+            <header>
+              <h3>
+                HKSATabling
+                <a class="ext-link" href="https://hksatabling-utjuta9cmx64qjjpfh7rpk.streamlit.app/" target="_blank" rel="noopener" aria-label="HKSATabling live demo">
+                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                </a>
+                <a class="ext-link" href="https://github.com/JonathanLiu1401/HKSATabling" target="_blank" rel="noopener" aria-label="HKSATabling on GitHub">
+                  <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                </a>
+              </h3>
+              <p class="project-sub">Python &middot; Streamlit &middot; Constraint Solver</p>
+            </header>
+            <p>
+              Web app that auto-generates fair weekly tabling schedules for the Hong Kong
+              Student Association at UW: 5 days &times; 4 slots, constraint solver across
+              member availability, Excel export. Built as a live Streamlit deployment with
+              135 pytest tests.
+            </p>
+            <ul class="tag-list" aria-label="Tags">
+              <li>Python</li>
+              <li>Streamlit</li>
+              <li>Scheduling</li>
+            </ul>
+            <p class="project-date">2025 &ndash; Present</p>
+          </article>
+
+          <article class="project-card">
+            <header>
+              <h3>
+                Autonomous Line-Following Car
+                <a class="ext-link" href="https://github.com/JonathanLiu1401/LineFollowArduino" target="_blank" rel="noopener" aria-label="Line-Following Car on GitHub">
+                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                </a>
+              </h3>
+              <p class="project-sub">Arduino &middot; PID &middot; Embedded</p>
+            </header>
+            <p>
+              Arduino-based vehicle with a custom PID controller; held the all-time
+              fastest record at the UW Line-Following Car Competition.
+            </p>
+            <ul class="tag-list" aria-label="Tags">
+              <li>Arduino</li>
+              <li>PID</li>
+              <li>Embedded</li>
+            </ul>
+            <p class="project-date">Feb 2026</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <dl class="skills-grid">
+          <div class="skill-group">
+            <dt>Analog IC Design</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>Cadence Virtuoso (Schematic &amp; Layout)</li>
+                <li>ADE Explorer</li>
+                <li>ADE Assembler</li>
+                <li>45nm CMOS PDK</li>
+                <li>LTspice</li>
+                <li>SPICE</li>
+                <li>Op-Amps</li>
+                <li>OTAs</li>
+                <li>Current Mirrors</li>
+                <li>Differential Pairs</li>
+                <li>Frequency Compensation</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>Hardware &amp; Embedded</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>Altium Designer</li>
+                <li>KiCad</li>
+                <li>STM32 (CubeIDE / CubeMX / HAL)</li>
+                <li>Arduino</li>
+                <li>FPGA (SystemVerilog)</li>
+                <li>Intel Quartus</li>
+                <li>ModelSim</li>
+                <li>BLDC Motor Control</li>
+                <li>LDOs</li>
+                <li>Soldering</li>
+                <li>Oscilloscopes</li>
+                <li>Logic Analyzers</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>Software</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>C / C++</li>
+                <li>Python (NumPy / SciPy / PyTorch)</li>
+                <li>Java</li>
+                <li>MATLAB</li>
+                <li>Linux / Bash</li>
+                <li>Git</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>CAD / Mechanical</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>Fusion360</li>
+                <li>OpenSCAD</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>Languages</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>English</li>
+                <li>Chinese (Mandarin &amp; Cantonese)</li>
+                <li>Japanese</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+
+        <article class="edu-card">
+          <header class="edu-head">
+            <div>
+              <h3>University of Washington</h3>
+              <p class="edu-degree">B.S., Electrical and Computer Engineering &mdash; GPA 3.93</p>
+            </div>
+            <p class="edu-meta"><span>Seattle, WA</span><span>Sep 2024 &ndash; June 2027</span></p>
+          </header>
+          <ul class="bullets">
+            <li><strong>Honors:</strong> IEEE HKN Honor Society (Top 8% ECE), Tau Beta Pi (Top 12.5%).</li>
+            <li>
+              <strong>Relevant coursework:</strong> Computer Architecture, Microelectronic
+              Circuit Design, Digital Circuit Design, Signals and Systems, Object Oriented
+              Programming, Data Structures and Algorithms, Power Systems, Control System
+              Analysis, Hardware/Software Interface (Low-level programming).
+            </li>
+          </ul>
+        </article>
+
+        <article class="edu-card">
+          <header class="edu-head">
+            <div>
+              <h3>Tohoku University &mdash; STEM Summer Program</h3>
+              <p class="edu-degree">Nanoelectronics Fabrication &amp; Robotics Immersion &mdash; GPA 4.0</p>
+            </div>
+            <p class="edu-meta"><span>Sendai, Japan</span><span>June &ndash; July 2025</span></p>
+          </header>
+        </article>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Awards &amp; Activities</h2>
+        <ul class="awards-list">
+          <li>
+            <span class="award-title">Tau Beta Pi Engineering Honor Society</span>
+            <span class="award-meta">Top 12.5% of Class &middot; 2025</span>
+          </li>
+          <li>
+            <span class="award-title">Annual Dean's List &mdash; University of Washington</span>
+            <span class="award-meta">2024 &ndash; Present</span>
+          </li>
+          <li>
+            <span class="award-title">IEEE UW &mdash; Events Officer</span>
+            <span class="award-meta">Jan 2026 &ndash; Present</span>
+          </li>
+          <li>
+            <span class="award-title">Hong Kong Student Association (HKSA) at UW &mdash; Events Officer</span>
+            <span class="award-meta">Oct 2025 &ndash; Present</span>
+          </li>
+          <li>
+            <span class="award-title">UW Line-Following Car Competition</span>
+            <span class="award-meta">All-Time Fastest Record &middot; Feb 2026</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contact-wrap">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-lead">
+          Open to internships and research opportunities in analog, mixed-signal, and
+          semiconductor design. The fastest way to reach me is email.
+        </p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:jliu1401@uw.edu">
+            <svg class="icon" aria-hidden="true"><use href="#i-email" /></svg>
+            <span>jliu1401@uw.edu</span>
+          </a>
+          <a class="btn" href="tel:+12065890963">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>
+            <span>+1 206-589-0963</span>
+          </a>
+          <a class="btn" href="https://linkedin.com/in/jonathan-liu-202081252" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="btn" href="https://github.com/JonathanLiu1401" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+            <span>GitHub</span>
+          </a>
+          <a class="btn btn-outline" href="./Jonathan_Liu_Resume.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+            <span>Download Resume PDF</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>&copy; <span id="year"></span> Jonathan Liu. Built with HTML, CSS, and a soldering iron.</p>
+      <a href="#top" class="footer-top">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
