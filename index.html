@@ -171,12 +171,11 @@
           <p>
             On the systems side, I lead the Husky Robotics drone subteam, where I am
             designing a custom STM32H743-based flight controller in Altium from schematic
-            to PCB - integrating current sensing, USB-UART debug, and multi-protocol I/O
-            (UART, CAN, SPI, I2C, USB, Ethernet) - alongside two supporting boards (ESC and
-            PDB). I also serve as an Electrical Systems Engineer on the Engineering
-            Horizons Mars Rover team. I enjoy work that spans the full hardware stack:
-            hand-sized transistors, embedded firmware, and the empirical tests that close
-            the loop.
+            to PCB and architecting the full drone system for the URC 2026 Delivery
+            mission. Earlier this year I served as an Electrical Systems Engineer on the
+            Engineering Horizons Mars Rover team. I enjoy work that spans the full
+            hardware stack: hand-sized transistors, embedded firmware, and the empirical
+            tests that close the loop.
           </p>
           <p>
             Outside of school I'm interested in high-speed PCB layout, signal integrity,
@@ -192,6 +191,20 @@
       <div class="container">
         <h2 class="section-title">Experience</h2>
         <ol class="timeline">
+          <li class="timeline-item">
+            <article>
+              <header class="timeline-head">
+                <h3>Mechatronics Intern <span style="font-weight:normal;font-size:0.85em;color:var(--muted);">(Incoming)</span></h3>
+                <p class="timeline-org">Trellis Robotics</p>
+                <p class="timeline-meta"><span>June 15 &ndash; September 25, 2026</span><span>Full-time</span></p>
+              </header>
+              <p style="margin:0 0 0.6rem 0;">Incoming full-time <strong>Mechatronics Intern</strong> at Trellis Robotics, reporting to Elvy Yao (CEO).</p>
+              <ul class="bullets">
+                <li><strong>Pre-internship prep</strong>: building a <strong>ROS2</strong> camera-streaming system on a Raspberry Pi 4 with a custom 2-layer SMD carrier PCB - exercising the hardware / firmware / ROS2 stack ahead of the start date.</li>
+              </ul>
+            </article>
+          </li>
+
           <li class="timeline-item">
             <article>
               <header class="timeline-head">
@@ -237,7 +250,7 @@
               <ul class="bullets">
                 <li><strong>Custom Flight Controller PCB:</strong> Piloted the design of a custom flight controller in <strong>Altium Designer</strong> around an <strong>STM32H743VGT6</strong> (LQFP-100, 25&nbsp;MHz Abracon crystal) to replace commercial solutions and enable deeper integration with autonomous drone systems - completed schematic capture and <strong>4-layer PCB layout</strong> integrating <strong>BMI270</strong> IMU, <strong>MS5611</strong> barometer, <strong>INA219</strong> current/power telemetry, USB-C with <strong>TCPP01-M12</strong> PD-sink and ECMF2 ESD filter, microSD via SDMMC, and 6-pin JST-GH redundant power input:
                   <ul class="bullets" style="margin-top:0.4rem;">
-                    <li>Engineered <strong>DSHOT600</strong> communication protocol for ESCs driving 760&nbsp;KV BLDC motors.</li>
+                    <li>Engineered <strong>DSHOT600</strong> communication protocol for ESCs driving 750&nbsp;KV BLDC motors.</li>
                     <li>Established <strong>MAVLink</strong> interfaces between the FC and an NVIDIA <strong>Jetson Orin Nano</strong> for computer vision and autonomous navigation.</li>
                     <li>Designed redundant power-sensing and regulation architectures using multiple ICs to prevent in-flight failure.</li>
                     <li>Implemented telemetry collection and broadcasting circuitry with full <strong>PX4</strong>-firmware compatibility.</li>
@@ -639,6 +652,14 @@
       </div>
     </section>
 
+    <!-- TECHNICAL AREAS OF INTEREST -->
+    <section id="interests" class="section">
+      <div class="container">
+        <h2 class="section-title">Technical Areas of Interest</h2>
+        <p>Operational amplifier and OTA topologies (single-stage, telescopic, folded cascode, two-stage Miller-compensated); frequency compensation and stability analysis; electronic-photonic integration and silicon-photonic interface circuitry (modulator drivers, transimpedance amplifiers, photodiode front-ends); high-speed data converters (SAR ADCs, &Sigma;&Delta; ADCs, current-steering DACs); clock-and-data recovery and phase-locked loops; switched-capacitor circuits and discrete-time signal processing; reference and bias generation (bandgap references, current mirrors); low-noise amplifier design and noise analysis (kT/C, 1/f, thermal); bioelectronic and neurophotonic interface circuits for biomedical signal chains; energy-efficient mixed-signal I/O for data-center and AI-accelerator interconnect; nanoscale CMOS device physics and analog layout for matching and parasitic minimization.</p>
+      </div>
+    </section>
+
     <!-- EDUCATION -->
     <section id="education" class="section">
       <div class="container">
@@ -667,14 +688,26 @@
         <article class="edu-card">
           <header class="edu-head">
             <div>
+              <h3>UPWARDS Program (UW + Hiroshima University + Micron + TEL)</h3>
+              <p class="edu-degree">Semiconductor Fabrication &amp; Industry Immersion (Accepted)</p>
+            </div>
+            <p class="edu-meta"><span>Hiroshima, Japan</span><span>July 2026</span></p>
+          </header>
+          <ul class="bullets">
+            <li>Selected for a competitive industry-academic semiconductor fabrication program bridging the University of Washington, Hiroshima University, Micron Technology, and Tokyo Electron (TEL).</li>
+          </ul>
+        </article>
+
+        <article class="edu-card">
+          <header class="edu-head">
+            <div>
               <h3>Tohoku University - STEM Summer Program</h3>
               <p class="edu-degree">Nanoelectronics Fabrication &amp; Robotics Immersion - GPA 4.0</p>
             </div>
             <p class="edu-meta"><span>Sendai, Japan</span><span>June &ndash; July 2025</span></p>
           </header>
           <ul class="bullets">
-            <li><strong>Space Robotics &amp; AI Autonomy:</strong> joined Prof. Yoshida's lab to develop and test ROS2-based rover systems with a focus on power efficiency, AI control loops, and real-time data analysis.</li>
-            <li><strong>Disaster Resilience &amp; Community Engineering:</strong> field research in Minamisanriku and Arahama studying 15&nbsp;m tsunami impact zones and local rebuilding strategies.</li>
+            <li>Completed hands-on <strong>MEMS fabrication</strong> laboratory modules and observed semiconductor fabrication processes at scale, gaining direct exposure to cleanroom workflows and device fabrication techniques.</li>
           </ul>
         </article>
 
