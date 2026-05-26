@@ -211,24 +211,44 @@
             <article>
               <header class="timeline-head">
                 <h3>
-                  Lead <span class="role-sep">|</span> Drone Hardware Engineer
-                  <a class="ext-link" href="https://github.com/JonathanLiu1401/UWDRONE" target="_blank" rel="noopener" aria-label="UWDRONE repository on GitHub">
+                  Drone Lead
+                  <a class="ext-link" href="https://github.com/uwdrones/Flight-Controller" target="_blank" rel="noopener" aria-label="Husky Robotics Flight Controller repository on GitHub">
                     <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
                   </a>
                 </h3>
                 <p class="timeline-org">Husky Robotics - Drone Subteam</p>
-                <p class="timeline-meta">
-                  <span>Lead: Sep 2025 &ndash; Present</span>
-                  <span>Hardware Engineer: Oct 2024 &ndash; Present</span>
-                  <span>Seattle, WA</span>
-                </p>
+                <p class="timeline-meta"><span>Sep 2025 &ndash; Present</span><span>Seattle, WA</span></p>
               </header>
               <ul class="bullets">
-                <li><strong>Technical Lead</strong>: Spearhead recruitment and technical onboarding for the 20+ member subteam; manage the full development lifecycle of three custom PCBs (Flight Controller, ESC, PDB), BOM selection, and design reviews. Building advanced drones for <strong>SUAS</strong> and <strong>URC</strong> competitions.</li>
-                <li><strong>Drone System Architecture</strong>: Architected and built a competition-grade autonomous quadcopter from system spec through flight test for the URC 2026 Delivery mission (&lt;5&nbsp;kg, 10-min endurance, 1-mile range): Avenger 2816 760&nbsp;KV motors with 10&Prime; props and Hobbywing Skywalker 50A ESCs, 6S Li-Ion 222&nbsp;Wh power with Holybro PDB + Matek PM12S dual-BEC distribution, Pixhawk 6C flight controller running custom-compiled PX4 with CRSF/ExpressLRS driver, and an NVIDIA Jetson Orin Nano companion computer bridging MAVLink to a ground-station QGroundControl over a 5&nbsp;GHz MikroTik WiFi link.</li>
-                <li><strong>Custom Flight Controller V0.1</strong>: Architecting the Husky Robotics FC from scratch in <strong>Altium Designer</strong> around an <strong>STM32H743VGT6</strong> (LQFP-100, 25&nbsp;MHz Abracon crystal); completed schematic capture and <strong>4-layer PCB layout</strong> integrating <strong>BMI270</strong> IMU, <strong>MS5611</strong> barometric pressure sensor, <strong>INA219</strong> current/power telemetry, USB-C with <strong>TCPP01-M12</strong> PD-sink controller and ECMF2 ESD filter, microSD via SDMMC, and 6-pin JST-GH redundant power input.</li>
-                <li><strong>Embedded Firmware</strong>: Developed bare-metal <strong>STM32 HAL</strong> drivers in CubeIDE/CubeMX for <strong>DSHOT600</strong> motor control, <strong>MAVLink</strong> telemetry, and <strong>PX4</strong>-compatible sensor fusion.</li>
-                <li><strong>Testing</strong>: Built an automated thrust stand with hardware-in-the-loop (<strong>HIL</strong>) fixtures to characterize BLDC motor performance, optimizing propulsion efficiency by 25%.</li>
+                <li>Spearheaded recruitment and technical onboarding for the 20+ member Drone subteam; implemented training pipelines that improved member retention and accelerated project completion timelines.</li>
+                <li>Piloted and managed the full development lifecycle of three custom PCBs (Flight Controller, ESC, Power Distribution Board), coordinating technical deliverables, design reviews, and onboarding of new contributors.</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline-item">
+            <article>
+              <header class="timeline-head">
+                <h3>Hardware Engineer - Drone</h3>
+                <p class="timeline-org">Husky Robotics - Drone Subteam</p>
+                <p class="timeline-meta"><span>Oct 2024 &ndash; Present</span><span>Seattle, WA</span></p>
+              </header>
+              <p style="margin:0 0 0.6rem 0;">Building advanced drones to challenge <strong>SUAS</strong> and <strong>URC</strong> competitions.</p>
+              <ul class="bullets">
+                <li><strong>Custom Flight Controller PCB:</strong> Piloted the design of a custom flight controller in <strong>Altium Designer</strong> around an <strong>STM32H743VGT6</strong> (LQFP-100, 25&nbsp;MHz Abracon crystal) to replace commercial solutions and enable deeper integration with autonomous drone systems - completed schematic capture and <strong>4-layer PCB layout</strong> integrating <strong>BMI270</strong> IMU, <strong>MS5611</strong> barometer, <strong>INA219</strong> current/power telemetry, USB-C with <strong>TCPP01-M12</strong> PD-sink and ECMF2 ESD filter, microSD via SDMMC, and 6-pin JST-GH redundant power input:
+                  <ul class="bullets" style="margin-top:0.4rem;">
+                    <li>Engineered <strong>DSHOT600</strong> communication protocol for ESCs driving 760&nbsp;KV BLDC motors.</li>
+                    <li>Established <strong>MAVLink</strong> interfaces between the FC and an NVIDIA <strong>Jetson Orin Nano</strong> for computer vision and autonomous navigation.</li>
+                    <li>Designed redundant power-sensing and regulation architectures using multiple ICs to prevent in-flight failure.</li>
+                    <li>Implemented telemetry collection and broadcasting circuitry with full <strong>PX4</strong>-firmware compatibility.</li>
+                  </ul>
+                </li>
+                <li><strong>Companion Computer Architecture:</strong> Designed and integrated a companion-computer architecture for a Pixhawk 6C-based drone using a <strong>Jetson Orin Nano</strong>, enabling computer vision and autonomous navigation via <strong>MAVLink</strong> over a redundant 5&nbsp;GHz long-range network bridge.</li>
+                <li><strong>Automated Thrust Stand:</strong> Engineered an Arduino-driven thrust stand with hardware-in-the-loop (<strong>HIL</strong>) fixtures to characterize motor and propeller performance, enabling data-driven component selection for optimal propulsion efficiency (25% improvement).</li>
+                <li><strong>Multi-Platform Integration:</strong> Integrated hardware and firmware subsystems across Pixhawk and SpeedyBee controllers using <strong>PX4</strong>, <strong>Betaflight</strong>, and <strong>QGroundControl</strong> to establish robust electronic communication protocols.</li>
+                <li><strong>Serial Communication:</strong> Implemented <strong>UART, I&sup2;C, SPI, and CAN</strong> protocols to interface external peripherals, bridging hardware sensors with firmware logic for real-time state estimation.</li>
+                <li><strong>BOM Engineering:</strong> Executed comprehensive Bill of Materials selection for 10&Prime; autonomous drones, analyzing datasheets and power-budget requirements for competition-grade reliability.</li>
+                <li><strong>HMI &amp; Telemetry:</strong> Established Human-Machine Interfaces and telemetry links between the drone and ground station for seamless real-time command and control during flight operations.</li>
               </ul>
             </article>
           </li>
