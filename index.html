@@ -163,10 +163,10 @@
           <p>
             I'm an Electrical and Computer Engineering undergraduate at the University of
             Washington (GPA 3.93), targeting a BSMS with a focus on analog IC and
-            mixed-signal design. I'm currently designing a 5T-OTA-based CMOS operational
-            amplifier in Cadence GPDK045 (45nm) using Cadence Virtuoso (schematic and
-            layout) and ADE Assembler, sizing devices from first-principles small-signal
-            analysis and validating with AC, DC, and transient sweeps in ADE Explorer.
+            mixed-signal design. My most recent IC work is a 5T-OTA-based CMOS operational
+            amplifier in Cadence GPDK045 (45nm) on a 1.5 V supply, hitting 25.5 dB
+            open-loop DC gain, 1.20 GHz GBW, and 1.0 V pp swing at 5.04 mW - sized
+            from first principles and closed-loop-optimized with ADE Assembler.
           </p>
           <p>
             On the systems side, I lead the Husky Robotics drone subteam, where I am
@@ -306,27 +306,29 @@
           <article class="project-card">
             <header>
               <h3>5T-OTA-Based CMOS Operational Amplifier</h3>
-              <p class="project-sub">EE 332 Final Project (in progress) &middot; Cadence Virtuoso &middot; GPDK045 (45nm)</p>
+              <p class="project-sub">EE 332 Final Project &middot; Cadence Virtuoso &middot; GPDK045 (45nm)</p>
             </header>
             <p>
-              Designing a single-stage <strong>5T OTA</strong> in <strong>Cadence
+              Designed a single-stage <strong>5T OTA</strong> in <strong>Cadence
               Virtuoso</strong> (<strong>GPDK045</strong> 45nm CMOS, 1.5&nbsp;V supply)
-              configured as a closed-loop inverting op-amp (closed-loop gain 4, 2&nbsp;pF
-              load at 100&nbsp;MHz) with a target of &ge;10&nbsp;V/V open-loop gain and
-              1&nbsp;V peak-to-peak output swing under minimum-power bias. Hand-sizing
-              the differential pair, current-mirror load, and tail current source from
-              first-principles small-signal analysis with V<sub>ov</sub>&nbsp;&gt;
-              100&nbsp;mV (all transistors in saturation); validating with AC, DC, and
-              transient sweeps in <strong>ADE Explorer</strong>.
+              wrapped in a resistive-feedback inverting amplifier (closed-loop gain 4,
+              2&nbsp;pF load at 100&nbsp;MHz). Achieved <strong>25.5&nbsp;dB</strong> DC
+              open-loop gain (18.9&nbsp;V/V), <strong>1.20&nbsp;GHz</strong>
+              gain-bandwidth product, clean <strong>1.0&nbsp;V</strong> peak-to-peak
+              output swing, and <strong>5.04&nbsp;mW</strong> total power dissipation.
+              Hand-sized devices from first-principles small-signal analysis with all six
+              transistors in saturation at V<sub>ov</sub>&nbsp;&gt;&nbsp;100&nbsp;mV,
+              then closed-loop-optimized via <strong>ADE Assembler</strong>
+              multi-objective sizing under all-saturation constraints.
             </p>
             <ul class="tag-list" aria-label="Tags">
               <li>Cadence Virtuoso</li>
-              <li>ADE Explorer</li>
+              <li>ADE Assembler</li>
               <li>GPDK045</li>
               <li>Op-Amp</li>
               <li>Analog IC</li>
             </ul>
-            <p class="project-date">Spring 2026</p>
+            <p class="project-date">May 2026</p>
           </article>
 
           <article class="project-card">
