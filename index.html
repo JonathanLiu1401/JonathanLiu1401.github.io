@@ -194,13 +194,17 @@
           <li class="timeline-item">
             <article>
               <header class="timeline-head">
-                <h3>Mechatronics Intern <span style="font-weight:normal;font-size:0.85em;color:var(--muted);">(Incoming)</span></h3>
+                <h3>Mechatronics Intern</h3>
                 <p class="timeline-org">Trellis Robotics</p>
                 <p class="timeline-meta"><span>June 15 &ndash; September 25, 2026</span><span>Full-time</span></p>
               </header>
-              <p style="margin:0 0 0.6rem 0;">Incoming full-time <strong>Mechatronics Intern</strong> at Trellis Robotics, reporting to Elvy Yao (CEO).</p>
+              <p style="margin:0 0 0.6rem 0;">Full-time <strong>Mechatronics Intern</strong> at Trellis Robotics, reporting to Elvy Yao (CEO).</p>
               <ul class="bullets">
-                <li><strong>Pre-internship prep</strong>: building a <strong>ROS2</strong> camera-streaming system on a Raspberry Pi 4 with a custom 2-layer SMD carrier PCB - exercising the hardware / firmware / ROS2 stack ahead of the start date.</li>
+                <li><strong>In-Pipe Robot PERIPH board</strong>: designing and reviewing a multi-rail peripheral PCB in <strong>KiCad 10</strong> - 4S battery management front-end (<strong>TI BQ76920</strong>), dual brushed-DC motor drivers (<strong>DRV8234</strong>), <strong>TPSM33625</strong> 5&nbsp;V / 12&nbsp;V bucks, <strong>TPS73733</strong> 3.3&nbsp;V LDO, and dual <strong>MCP4725</strong> I&sup2;C DACs on a single board for an In-Pipe inspection robot.</li>
+                <li><strong>BMS subsystem</strong>: architected a low-side, two-ground topology (GNDREF battery-negative and GND system-ground joined only through the R30 shunt and back-to-back <strong>CSD17571Q2</strong> protection FETs) with Kelvin SRP/SRN current sensing, TS1 charger-detect boot, master-switch off-state for &le;150&nbsp;&micro;A standby, and an XT30 charging port with TVS reverse-polarity protection.</li>
+                <li><strong>Layout &amp; DFM</strong>: iterating through full ERC/DRC and JLCPCB manufacturability sweeps using the <code>kicad-cli</code> and <code>pcbnew</code> Python API - current-aware via sizing per IPC-2221, adversarial footprint-vs-datasheet audits across every IC, and thermal-pad / via netting for proper ground and heat paths.</li>
+                <li><strong>Design-spec deliverable</strong>: authored a build-guide-style LaTeX/CircuiTikZ design spec for the BMS iteration-2 (master switch, XT30 port, charger-detect wake) with a verified BOM and circuit fragments referenced against the IC datasheets.</li>
+                <li><strong>Pre-internship prep</strong>: built a <strong>ROS2</strong> camera-streaming system on a Raspberry Pi 4 with a custom 2-layer SMD carrier PCB ahead of the start date.</li>
               </ul>
             </article>
           </li>
@@ -334,18 +338,21 @@
           <article class="project-card">
             <header>
               <h3>Adjustable AC-DC Boost Converter</h3>
-              <p class="project-sub">EE 331 Course Project &middot; LTspice &middot; Feedback Control</p>
+              <p class="project-sub">EE 331 Final Project &middot; LTspice &middot; Breadboarded &amp; Validated</p>
             </header>
             <p>
-              Designed in <strong>LTspice</strong> an AC-DC converter that boosts
-              &plusmn;7.5&nbsp;VAC line input to a continuously adjustable
-              <strong>+10&ndash;20&nbsp;VDC</strong> output (0&ndash;1&nbsp;mA load) with
-              &lt;100&nbsp;mV ripple. Topology: 1N4007 full-wave bridge rectifier + LC
-              pre-filter &rarr; 100&nbsp;mH boost stage switched by a 2N7000 NMOS at
-              ~72&nbsp;kHz (NE555 astable) &rarr; op-amp/Zener feedback regulator with a
-              1N4744 reference. Simulation hits <strong>15.02&nbsp;VDC</strong> at
-              mid-pot with <strong>12&nbsp;mV peak-to-peak ripple</strong>; breadboard
-              validation in progress.
+              Designed, simulated in <strong>LTspice</strong>, and built on breadboard
+              an AC-DC converter stepping &plusmn;7.5&nbsp;VAC line input up to a
+              continuously adjustable <strong>+10&ndash;20&nbsp;VDC</strong> output.
+              Topology: 1N4007 full-wave bridge rectifier + 300&nbsp;&micro;F bulk
+              filter &rarr; 100&nbsp;mH boost stage switched by a 2N7000 NMOS clocked by
+              an NE555 astable &rarr; MC1458 op-amp / 1N4732 Zener feedback regulator
+              with potentiometer trim. Achieved <strong>10.4&ndash;21.0&nbsp;V</strong>
+              measured output range, <strong>40&ndash;92&nbsp;mV</strong> peak-to-peak
+              ripple at 1&nbsp;mA load (within the &lt;100&nbsp;mV spec), measured
+              switching frequency <strong>11.3&nbsp;kHz at 76 % duty</strong>, and
+              load regulation within <strong>0.4 %</strong> from open-circuit to
+              1&nbsp;mA. Every design specification met on hardware.
             </p>
             <ul class="tag-list" aria-label="Tags">
               <li>LTspice</li>
@@ -354,7 +361,7 @@
               <li>Feedback Control</li>
               <li>Breadboard</li>
             </ul>
-            <p class="project-date">May 2026</p>
+            <p class="project-date">June 2026</p>
           </article>
 
           <article class="project-card">
