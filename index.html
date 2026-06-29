@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jonathan Liu - Analog IC Designer in Training | UW ECE '27</title>
-  <meta name="description" content="Jonathan Liu - University of Washington ECE undergraduate focused on analog IC design, mixed-signal systems, and custom hardware. Cadence Virtuoso, STM32, Altium, FPGA." />
+  <meta name="description"
+    content="Jonathan Liu - University of Washington ECE undergraduate focused on analog IC design, mixed-signal systems, and custom hardware. Cadence Virtuoso, STM32, Altium, FPGA." />
   <meta name="author" content="Jonathan Liu" />
   <meta name="theme-color" content="#ffffff" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Jonathan Liu - Analog IC Designer in Training" />
-  <meta property="og:description" content="UW ECE undergraduate focused on analog IC design and mixed-signal systems. Currently designing a 5T-OTA-based CMOS op-amp in Cadence GPDK045 (45nm) and leading a custom drone flight controller." />
+  <meta property="og:description"
+    content="UW ECE undergraduate focused on analog IC design and mixed-signal systems. Currently designing a 5T-OTA-based CMOS op-amp in Cadence GPDK045 (45nm) and leading a custom drone flight controller." />
   <meta property="og:url" content="https://jonathanliu1401.github.io/" />
   <meta property="og:site_name" content="Jonathan Liu" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Jonathan Liu - Analog IC Designer in Training" />
-  <meta name="twitter:description" content="UW ECE undergraduate focused on analog IC design and mixed-signal systems." />
+  <meta name="twitter:description"
+    content="UW ECE undergraduate focused on analog IC design and mixed-signal systems." />
 
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='65' font-size='60' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-weight='700' fill='%230066cc'%3EJL%3C/text%3E%3C/svg%3E" />
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='65' font-size='60' text-anchor='middle' font-family='Helvetica,Arial,sans-serif' font-weight='700' fill='%230066cc'%3EJL%3C/text%3E%3C/svg%3E" />
 
   <!-- Apply persisted theme before first paint to avoid FOUC -->
   <script>
@@ -29,49 +34,62 @@
       try {
         var t = localStorage.getItem('theme');
         if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
 </head>
+
 <body>
   <!-- Inline SVG icon sprite -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-    <symbol id="i-email" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-email" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+      stroke-linejoin="round">
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <path d="M3 7l9 6 9-6" />
     </symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path
+        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
     </symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/>
+      <path
+        d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z" />
     </symbol>
     <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.23c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.72.08-.72 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49.99.1-.77.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3z"/>
+      <path
+        d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.23c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.72.08-.72 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49.99.1-.77.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3z" />
     </symbol>
-    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+      stroke-linejoin="round">
       <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      <path
+        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
     </symbol>
-    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+      stroke-linejoin="round">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
     </symbol>
-    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
       <polyline points="7 10 12 15 17 10" />
       <line x1="12" y1="15" x2="12" y2="3" />
     </symbol>
-    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+      stroke-linecap="round" stroke-linejoin="round">
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
       <polyline points="15 3 21 3 21 9" />
       <line x1="10" y1="14" x2="21" y2="3" />
     </symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
       <line x1="3" y1="6" x2="21" y2="6" />
       <line x1="3" y1="12" x2="21" y2="12" />
       <line x1="3" y1="18" x2="21" y2="18" />
     </symbol>
-    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
       <line x1="18" y1="6" x2="6" y2="18" />
       <line x1="6" y1="6" x2="18" y2="18" />
     </symbol>
@@ -87,7 +105,9 @@
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
-        <svg class="icon" aria-hidden="true"><use href="#i-menu" /></svg>
+        <svg class="icon" aria-hidden="true">
+          <use href="#i-menu" />
+        </svg>
       </button>
 
       <nav class="primary-nav" id="primaryNav" aria-label="Primary">
@@ -101,11 +121,17 @@
         </ul>
         <div class="nav-actions">
           <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
-            <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
-            <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon icon-sun" aria-hidden="true">
+              <use href="#i-sun" />
+            </svg>
+            <svg class="icon icon-moon" aria-hidden="true">
+              <use href="#i-moon" />
+            </svg>
           </button>
           <a class="btn btn-resume" href="./Jonathan_Liu_Resume.pdf" download>
-            <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-download" />
+            </svg>
             <span>Resume</span>
           </a>
         </div>
@@ -128,25 +154,34 @@
         <ul class="hero-contacts" aria-label="Contact links">
           <li>
             <a href="mailto:jliu1401@uw.edu" aria-label="Email Jonathan">
-              <svg class="icon" aria-hidden="true"><use href="#i-email" /></svg>
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-email" />
+              </svg>
               <span>jliu1401@uw.edu</span>
             </a>
           </li>
           <li>
             <a href="tel:+12065890963" aria-label="Call Jonathan">
-              <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-phone" />
+              </svg>
               <span>+1 206-589-0963</span>
             </a>
           </li>
           <li>
-            <a href="https://linkedin.com/in/jonathan-liu-202081252" target="_blank" rel="noopener" aria-label="LinkedIn profile">
-              <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+            <a href="https://linkedin.com/in/jonathan-liu-202081252" target="_blank" rel="noopener"
+              aria-label="LinkedIn profile">
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-linkedin" />
+              </svg>
               <span>LinkedIn</span>
             </a>
           </li>
           <li>
             <a href="https://github.com/JonathanLiu1401" target="_blank" rel="noopener" aria-label="GitHub profile">
-              <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-github" />
+              </svg>
               <span>GitHub</span>
             </a>
           </li>
@@ -159,7 +194,9 @@
       <div class="container">
         <h2 class="section-title">About</h2>
         <div class="prose">
-          <img src="https://avatars.githubusercontent.com/u/56282982?v=4" alt="Jonathan Liu profile photo" width="140" height="140" style="float:right;width:140px;height:140px;border-radius:50%;margin:0 0 1rem 1.5rem;border:1px solid var(--border);object-fit:cover;" />
+          <img src="https://avatars.githubusercontent.com/u/56282982?v=4" alt="Jonathan Liu profile photo" width="140"
+            height="140"
+            style="float:right;width:140px;height:140px;border-radius:50%;margin:0 0 1rem 1.5rem;border:1px solid var(--border);object-fit:cover;" />
           <p>
             I'm an Electrical and Computer Engineering undergraduate at the University of
             Washington (GPA 3.93), targeting a BSMS with a focus on analog IC and
@@ -198,13 +235,29 @@
                 <p class="timeline-org">Trellis Robotics</p>
                 <p class="timeline-meta"><span>June 15 &ndash; September 25, 2026</span><span>Full-time</span></p>
               </header>
-              <p style="margin:0 0 0.6rem 0;">Full-time <strong>Mechatronics Intern</strong> at Trellis Robotics, reporting to Elvy Yao (CEO).</p>
+              <p style="margin:0 0 0.6rem 0;">Full-time <strong>Mechatronics Intern</strong> at Trellis Robotics,
+                reporting directly under the CEO.</p>
               <ul class="bullets">
-                <li><strong>In-Pipe Robot PERIPH board</strong>: designing and reviewing a multi-rail peripheral PCB in <strong>KiCad 10</strong> - 4S battery management front-end (<strong>TI BQ76920</strong>), dual brushed-DC motor drivers (<strong>DRV8234</strong>), <strong>TPSM33625</strong> 5&nbsp;V / 12&nbsp;V bucks, <strong>TPS73733</strong> 3.3&nbsp;V LDO, and dual <strong>MCP4725</strong> I&sup2;C DACs on a single board for an In-Pipe inspection robot.</li>
-                <li><strong>BMS subsystem</strong>: architected a low-side, two-ground topology (GNDREF battery-negative and GND system-ground joined only through the R30 shunt and back-to-back <strong>CSD17571Q2</strong> protection FETs) with Kelvin SRP/SRN current sensing, TS1 charger-detect boot, master-switch off-state for &le;150&nbsp;&micro;A standby, and an XT30 charging port with TVS reverse-polarity protection.</li>
-                <li><strong>Layout &amp; DFM</strong>: iterating through full ERC/DRC and JLCPCB manufacturability sweeps using the <code>kicad-cli</code> and <code>pcbnew</code> Python API - current-aware via sizing per IPC-2221, adversarial footprint-vs-datasheet audits across every IC, and thermal-pad / via netting for proper ground and heat paths.</li>
-                <li><strong>Design-spec deliverable</strong>: authored a build-guide-style LaTeX/CircuiTikZ design spec for the BMS iteration-2 (master switch, XT30 port, charger-detect wake) with a verified BOM and circuit fragments referenced against the IC datasheets.</li>
-                <li><strong>Pre-internship prep</strong>: built a <strong>ROS2</strong> camera-streaming system on a Raspberry Pi 4 with a custom 2-layer SMD carrier PCB ahead of the start date.</li>
+                <li><strong>In-Pipe Robot PERIPH board</strong>: designing and reviewing a multi-rail peripheral PCB in
+                  <strong>KiCad 10</strong> - 4S battery management front-end (<strong>TI BQ76920</strong>), dual
+                  brushed-DC motor drivers (<strong>DRV8234</strong>), <strong>TPSM33625</strong> 5&nbsp;V / 12&nbsp;V
+                  bucks, <strong>TPS73733</strong> 3.3&nbsp;V LDO, and dual <strong>MCP4725</strong> I&sup2;C DACs on a
+                  single board for an In-Pipe inspection robot.
+                </li>
+                <li><strong>BMS subsystem</strong>: architected a low-side, two-ground topology (GNDREF battery-negative
+                  and GND system-ground joined only through the R30 shunt and back-to-back <strong>CSD17571Q2</strong>
+                  protection FETs) with Kelvin SRP/SRN current sensing, TS1 charger-detect boot, master-switch off-state
+                  for &le;150&nbsp;&micro;A standby, and an XT30 charging port with TVS reverse-polarity protection.
+                </li>
+                <li><strong>Layout &amp; DFM</strong>: iterating through full ERC/DRC and JLCPCB manufacturability
+                  sweeps using the <code>kicad-cli</code> and <code>pcbnew</code> Python API - current-aware via sizing
+                  per IPC-2221, adversarial footprint-vs-datasheet audits across every IC, and thermal-pad / via netting
+                  for proper ground and heat paths.</li>
+                <li><strong>Design-spec deliverable</strong>: authored a build-guide-style LaTeX/CircuiTikZ design spec
+                  for the BMS iteration-2 (master switch, XT30 port, charger-detect wake) with a verified BOM and
+                  circuit fragments referenced against the IC datasheets.</li>
+                <li><strong>Pre-internship prep</strong>: built a <strong>ROS2</strong> camera-streaming system on a
+                  Raspberry Pi 4 with a custom 2-layer SMD carrier PCB ahead of the start date.</li>
               </ul>
             </article>
           </li>
@@ -217,9 +270,16 @@
                 <p class="timeline-meta"><span>Jan 2026 &ndash; Present</span><span>Seattle, WA</span></p>
               </header>
               <ul class="bullets">
-                <li>Co-investigating a cross-modality study validating <strong>PPG-derived heart-rate variability</strong> against synchronous <strong>ECG</strong> reference across 5 body sites (finger, forehead, earlobe, shoulder, wrist) and Fitzpatrick skin types; manuscript in preparation for <em>MDPI Sensors</em>.</li>
-                <li>Implementing a 13-feature HRV analytics pipeline in Python (NumPy/SciPy): time-domain (SDNN, RMSSD, pNN50), Lomb-Scargle frequency-domain (LF, HF, LF/HF), Poincar&eacute; (SD1, SD2), and sample entropy; concordance analysis via Lin's CCC and Bland-Altman against ECG.</li>
-                <li>Built the multi-site acquisition stack: <strong>MAX30102</strong> PPG and <strong>AD8232</strong> ECG sensors over a TCA9548A I&sup2;C multiplexer; designed custom 3D-printed body-sensor mounts in OpenSCAD and a live FastAPI acquisition dashboard.</li>
+                <li>Co-investigating a cross-modality study validating <strong>PPG-derived heart-rate
+                    variability</strong> against synchronous <strong>ECG</strong> reference across 5 body sites (finger,
+                  forehead, earlobe, shoulder, wrist) and Fitzpatrick skin types; manuscript in preparation for <em>MDPI
+                    Sensors</em>.</li>
+                <li>Implementing a 13-feature HRV analytics pipeline in Python (NumPy/SciPy): time-domain (SDNN, RMSSD,
+                  pNN50), Lomb-Scargle frequency-domain (LF, HF, LF/HF), Poincar&eacute; (SD1, SD2), and sample entropy;
+                  concordance analysis via Lin's CCC and Bland-Altman against ECG.</li>
+                <li>Built the multi-site acquisition stack: <strong>MAX30102</strong> PPG and <strong>AD8232</strong>
+                  ECG sensors over a TCA9548A I&sup2;C multiplexer; designed custom 3D-printed body-sensor mounts in
+                  OpenSCAD and a live FastAPI acquisition dashboard.</li>
               </ul>
             </article>
           </li>
@@ -229,16 +289,22 @@
               <header class="timeline-head">
                 <h3>
                   Drone Lead
-                  <a class="ext-link" href="https://github.com/uwdrones/Flight-Controller" target="_blank" rel="noopener" aria-label="Husky Robotics Flight Controller repository on GitHub">
-                    <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                  <a class="ext-link" href="https://github.com/uwdrones/Flight-Controller" target="_blank"
+                    rel="noopener" aria-label="Husky Robotics Flight Controller repository on GitHub">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="#i-external" />
+                    </svg>
                   </a>
                 </h3>
                 <p class="timeline-org">Husky Robotics - Drone Subteam</p>
                 <p class="timeline-meta"><span>Sep 2025 &ndash; Present</span><span>Seattle, WA</span></p>
               </header>
               <ul class="bullets">
-                <li>Spearheaded recruitment and technical onboarding for the 20+ member Drone subteam; implemented training pipelines that improved member retention and accelerated project completion timelines.</li>
-                <li>Piloted and managed the full development lifecycle of three custom PCBs (Flight Controller, ESC, Power Distribution Board), coordinating technical deliverables, design reviews, and onboarding of new contributors.</li>
+                <li>Spearheaded recruitment and technical onboarding for the 20+ member Drone subteam; implemented
+                  training pipelines that improved member retention and accelerated project completion timelines.</li>
+                <li>Piloted and managed the full development lifecycle of three custom PCBs (Flight Controller, ESC,
+                  Power Distribution Board), coordinating technical deliverables, design reviews, and onboarding of new
+                  contributors.</li>
               </ul>
             </article>
           </li>
@@ -250,22 +316,49 @@
                 <p class="timeline-org">Husky Robotics - Drone Subteam</p>
                 <p class="timeline-meta"><span>Oct 2024 &ndash; Present</span><span>Seattle, WA</span></p>
               </header>
-              <p style="margin:0 0 0.6rem 0;">Building advanced drones to challenge <strong>SUAS</strong> and <strong>URC</strong> competitions.</p>
+              <p style="margin:0 0 0.6rem 0;">Building advanced drones to challenge <strong>SUAS</strong> and
+                <strong>URC</strong> competitions.
+              </p>
               <ul class="bullets">
-                <li><strong>Custom Flight Controller PCB:</strong> Piloted the design of a custom flight controller in <strong>Altium Designer</strong> around an <strong>STM32H743VGT6</strong> (LQFP-100, 25&nbsp;MHz Abracon crystal) to replace commercial solutions and enable deeper integration with autonomous drone systems - completed schematic capture and <strong>4-layer PCB layout</strong> integrating <strong>BMI270</strong> IMU, <strong>MS5611</strong> barometer, <strong>INA219</strong> current/power telemetry, USB-C with <strong>TCPP01-M12</strong> PD-sink and ECMF2 ESD filter, microSD via SDMMC, and 6-pin JST-GH redundant power input:
+                <li><strong>Custom Flight Controller PCB:</strong> Piloted the design of a custom flight controller in
+                  <strong>Altium Designer</strong> around an <strong>STM32H743VGT6</strong> (LQFP-100, 25&nbsp;MHz
+                  Abracon crystal) to replace commercial solutions and enable deeper integration with autonomous drone
+                  systems - completed schematic capture and <strong>4-layer PCB layout</strong> integrating
+                  <strong>BMI270</strong> IMU, <strong>MS5611</strong> barometer, <strong>INA219</strong> current/power
+                  telemetry, USB-C with <strong>TCPP01-M12</strong> PD-sink and ECMF2 ESD filter, microSD via SDMMC, and
+                  6-pin JST-GH redundant power input:
                   <ul class="bullets" style="margin-top:0.4rem;">
-                    <li>Engineered <strong>DSHOT600</strong> communication protocol for ESCs driving 750&nbsp;KV BLDC motors.</li>
-                    <li>Established <strong>MAVLink</strong> interfaces between the FC and an NVIDIA <strong>Jetson Orin Nano</strong> for computer vision and autonomous navigation.</li>
-                    <li>Designed redundant power-sensing and regulation architectures using multiple ICs to prevent in-flight failure.</li>
-                    <li>Implemented telemetry collection and broadcasting circuitry with full <strong>PX4</strong>-firmware compatibility.</li>
+                    <li>Engineered <strong>DSHOT600</strong> communication protocol for ESCs driving 750&nbsp;KV BLDC
+                      motors.</li>
+                    <li>Established <strong>MAVLink</strong> interfaces between the FC and an NVIDIA <strong>Jetson Orin
+                        Nano</strong> for computer vision and autonomous navigation.</li>
+                    <li>Designed redundant power-sensing and regulation architectures using multiple ICs to prevent
+                      in-flight failure.</li>
+                    <li>Implemented telemetry collection and broadcasting circuitry with full
+                      <strong>PX4</strong>-firmware compatibility.
+                    </li>
                   </ul>
                 </li>
-                <li><strong>Companion Computer Architecture:</strong> Designed and integrated a companion-computer architecture for a Pixhawk 6C-based drone using a <strong>Jetson Orin Nano</strong>, enabling computer vision and autonomous navigation via <strong>MAVLink</strong> over a redundant 5&nbsp;GHz long-range network bridge.</li>
-                <li><strong>Automated Thrust Stand:</strong> Engineered an Arduino-driven thrust stand with hardware-in-the-loop (<strong>HIL</strong>) fixtures to characterize motor and propeller performance, enabling data-driven component selection for optimal propulsion efficiency (25% improvement).</li>
-                <li><strong>Multi-Platform Integration:</strong> Integrated hardware and firmware subsystems across Pixhawk and SpeedyBee controllers using <strong>PX4</strong>, <strong>Betaflight</strong>, and <strong>QGroundControl</strong> to establish robust electronic communication protocols.</li>
-                <li><strong>Serial Communication:</strong> Implemented <strong>UART, I&sup2;C, SPI, and CAN</strong> protocols to interface external peripherals, bridging hardware sensors with firmware logic for real-time state estimation.</li>
-                <li><strong>BOM Engineering:</strong> Executed comprehensive Bill of Materials selection for 10&Prime; autonomous drones, analyzing datasheets and power-budget requirements for competition-grade reliability.</li>
-                <li><strong>HMI &amp; Telemetry:</strong> Established Human-Machine Interfaces and telemetry links between the drone and ground station for seamless real-time command and control during flight operations.</li>
+                <li><strong>Companion Computer Architecture:</strong> Designed and integrated a companion-computer
+                  architecture for a Pixhawk 6C-based drone using a <strong>Jetson Orin Nano</strong>, enabling computer
+                  vision and autonomous navigation via <strong>MAVLink</strong> over a redundant 5&nbsp;GHz long-range
+                  network bridge.</li>
+                <li><strong>Automated Thrust Stand:</strong> Engineered an Arduino-driven thrust stand with
+                  hardware-in-the-loop (<strong>HIL</strong>) fixtures to characterize motor and propeller performance,
+                  enabling data-driven component selection for optimal propulsion efficiency (25% improvement).</li>
+                <li><strong>Multi-Platform Integration:</strong> Integrated hardware and firmware subsystems across
+                  Pixhawk and SpeedyBee controllers using <strong>PX4</strong>, <strong>Betaflight</strong>, and
+                  <strong>QGroundControl</strong> to establish robust electronic communication protocols.
+                </li>
+                <li><strong>Serial Communication:</strong> Implemented <strong>UART, I&sup2;C, SPI, and CAN</strong>
+                  protocols to interface external peripherals, bridging hardware sensors with firmware logic for
+                  real-time state estimation.</li>
+                <li><strong>BOM Engineering:</strong> Executed comprehensive Bill of Materials selection for 10&Prime;
+                  autonomous drones, analyzing datasheets and power-budget requirements for competition-grade
+                  reliability.</li>
+                <li><strong>HMI &amp; Telemetry:</strong> Established Human-Machine Interfaces and telemetry links
+                  between the drone and ground station for seamless real-time command and control during flight
+                  operations.</li>
               </ul>
             </article>
           </li>
@@ -278,7 +371,8 @@
                 <p class="timeline-meta"><span>Jan &ndash; Apr 2026</span><span>Seattle, WA</span></p>
               </header>
               <ul class="bullets">
-                <li>Piloted the design and assembly of electrical systems for the newest UW Mars Rover, contributing to power, sensing, and actuation subsystems for a competitive autonomous rover.</li>
+                <li>Piloted the design and assembly of electrical systems for the newest UW Mars Rover, contributing to
+                  power, sensing, and actuation subsystems for a competitive autonomous rover.</li>
               </ul>
             </article>
           </li>
@@ -291,8 +385,11 @@
                 <p class="timeline-meta"><span>July &ndash; Sep 2025</span><span>Guangzhou, China</span></p>
               </header>
               <ul class="bullets">
-                <li>Contributed to the autonomous flight and landing stack for the <strong>XPeng HT Aero X3 flying car</strong>: trained AI models for aerial object detection and autonomous landing-zone classification.</li>
-                <li>Validated the consistency and integrity of LiDAR point cloud and imagery data in a QA stage, ensuring reliable sensor fusion for downstream perception models.</li>
+                <li>Contributed to the autonomous flight and landing stack for the <strong>XPeng HT Aero X3 flying
+                    car</strong>: trained AI models for aerial object detection and autonomous landing-zone
+                  classification.</li>
+                <li>Validated the consistency and integrity of LiDAR point cloud and imagery data in a QA stage,
+                  ensuring reliable sensor fusion for downstream perception models.</li>
                 <li>Communicated technical updates across cross-functional engineering teams.</li>
               </ul>
             </article>
@@ -314,7 +411,7 @@
             </header>
             <p>
               Designed a single-stage <strong>5T OTA</strong> in <strong>Cadence
-              Virtuoso</strong> (<strong>GPDK045</strong> 45nm CMOS, 1.5&nbsp;V supply)
+                Virtuoso</strong> (<strong>GPDK045</strong> 45nm CMOS, 1.5&nbsp;V supply)
               wrapped in a resistive-feedback inverting amplifier (closed-loop gain 4,
               2&nbsp;pF load at 100&nbsp;MHz). Achieved <strong>25.5&nbsp;dB</strong> DC
               open-loop gain (18.9&nbsp;V/V), <strong>1.20&nbsp;GHz</strong>
@@ -387,8 +484,11 @@
             <header>
               <h3>
                 FPGARhythm
-                <a class="ext-link" href="https://github.com/JonathanLiu1401/FPGAosumania" target="_blank" rel="noopener" aria-label="FPGARhythm on GitHub">
-                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                <a class="ext-link" href="https://github.com/JonathanLiu1401/FPGAosumania" target="_blank"
+                  rel="noopener" aria-label="FPGARhythm on GitHub">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-external" />
+                  </svg>
                 </a>
               </h3>
               <p class="project-sub">EE 271 Course Project &middot; SystemVerilog &middot; Cyclone V GX (DE1-SoC)</p>
@@ -414,8 +514,11 @@
             <header>
               <h3>
                 Trading Intelligence
-                <a class="ext-link" href="https://github.com/JonathanLiu1401/trading-intelligence" target="_blank" rel="noopener" aria-label="Trading Intelligence on GitHub">
-                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                <a class="ext-link" href="https://github.com/JonathanLiu1401/trading-intelligence" target="_blank"
+                  rel="noopener" aria-label="Trading Intelligence on GitHub">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-external" />
+                  </svg>
                 </a>
               </h3>
               <p class="project-sub">Python &middot; SQLite &middot; LLM Systems</p>
@@ -441,8 +544,11 @@
             <header>
               <h3>
                 Job_App - Autonomous Job Application Platform
-                <a class="ext-link" href="https://github.com/Sao-06/Job_App" target="_blank" rel="noopener" aria-label="Job_App on GitHub">
-                  <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                <a class="ext-link" href="https://github.com/Sao-06/Job_App" target="_blank" rel="noopener"
+                  aria-label="Job_App on GitHub">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-github" />
+                  </svg>
                 </a>
               </h3>
               <p class="project-sub">Python &middot; FastAPI &middot; React &middot; LLM Pipeline</p>
@@ -471,11 +577,17 @@
             <header>
               <h3>
                 HKSATabling
-                <a class="ext-link" href="https://hksatabling-utjuta9cmx64qjjpfh7rpk.streamlit.app/" target="_blank" rel="noopener" aria-label="HKSATabling live demo">
-                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                <a class="ext-link" href="https://hksatabling-utjuta9cmx64qjjpfh7rpk.streamlit.app/" target="_blank"
+                  rel="noopener" aria-label="HKSATabling live demo">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-external" />
+                  </svg>
                 </a>
-                <a class="ext-link" href="https://github.com/JonathanLiu1401/HKSATabling" target="_blank" rel="noopener" aria-label="HKSATabling on GitHub">
-                  <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                <a class="ext-link" href="https://github.com/JonathanLiu1401/HKSATabling" target="_blank" rel="noopener"
+                  aria-label="HKSATabling on GitHub">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-github" />
+                  </svg>
                 </a>
               </h3>
               <p class="project-sub">Python &middot; Streamlit &middot; Constraint Solver</p>
@@ -518,8 +630,11 @@
             <header>
               <h3>
                 Autonomous Line-Following Car
-                <a class="ext-link" href="https://github.com/JonathanLiu1401/LineFollowArduino" target="_blank" rel="noopener" aria-label="Line-Following Car on GitHub">
-                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                <a class="ext-link" href="https://github.com/JonathanLiu1401/LineFollowArduino" target="_blank"
+                  rel="noopener" aria-label="Line-Following Car on GitHub">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-external" />
+                  </svg>
                 </a>
               </h3>
               <p class="project-sub">Arduino &middot; PID &middot; Embedded</p>
@@ -540,8 +655,11 @@
             <header>
               <h3>
                 ComplexSolver
-                <a class="ext-link" href="https://github.com/JonathanLiu1401/ComplexSolver" target="_blank" rel="noopener" aria-label="ComplexSolver on GitHub">
-                  <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg>
+                <a class="ext-link" href="https://github.com/JonathanLiu1401/ComplexSolver" target="_blank"
+                  rel="noopener" aria-label="ComplexSolver on GitHub">
+                  <svg class="icon" aria-hidden="true">
+                    <use href="#i-external" />
+                  </svg>
                 </a>
               </h3>
               <p class="project-sub">C &middot; TI-84 Plus CE &middot; Numerical Linear Algebra</p>
@@ -665,7 +783,15 @@
     <section id="interests" class="section">
       <div class="container">
         <h2 class="section-title">Technical Areas of Interest</h2>
-        <p>Operational amplifier and OTA topologies (single-stage, telescopic, folded cascode, two-stage Miller-compensated); frequency compensation and stability analysis; electronic-photonic integration and silicon-photonic interface circuitry (modulator drivers, transimpedance amplifiers, photodiode front-ends); high-speed data converters (SAR ADCs, &Sigma;&Delta; ADCs, current-steering DACs); clock-and-data recovery and phase-locked loops; switched-capacitor circuits and discrete-time signal processing; reference and bias generation (bandgap references, current mirrors); low-noise amplifier design and noise analysis (kT/C, 1/f, thermal); bioelectronic and neurophotonic interface circuits for biomedical signal chains; energy-efficient mixed-signal I/O for data-center and AI-accelerator interconnect; nanoscale CMOS device physics and analog layout for matching and parasitic minimization.</p>
+        <p>Operational amplifier and OTA topologies (single-stage, telescopic, folded cascode, two-stage
+          Miller-compensated); frequency compensation and stability analysis; electronic-photonic integration and
+          silicon-photonic interface circuitry (modulator drivers, transimpedance amplifiers, photodiode front-ends);
+          high-speed data converters (SAR ADCs, &Sigma;&Delta; ADCs, current-steering DACs); clock-and-data recovery and
+          phase-locked loops; switched-capacitor circuits and discrete-time signal processing; reference and bias
+          generation (bandgap references, current mirrors); low-noise amplifier design and noise analysis (kT/C, 1/f,
+          thermal); bioelectronic and neurophotonic interface circuits for biomedical signal chains; energy-efficient
+          mixed-signal I/O for data-center and AI-accelerator interconnect; nanoscale CMOS device physics and analog
+          layout for matching and parasitic minimization.</p>
       </div>
     </section>
 
@@ -683,7 +809,8 @@
             <p class="edu-meta"><span>Seattle, WA</span><span>Sep 2024 &ndash; June 2027</span></p>
           </header>
           <ul class="bullets">
-            <li><strong>Honors:</strong> IEEE HKN Honor Society Inductee (Iota Upsilon Chapter, Top 8% ECE), Tau Beta Pi Engineering Honor Society Inductee (Top 12.5%).</li>
+            <li><strong>Honors:</strong> IEEE HKN Honor Society Inductee (Iota Upsilon Chapter, Top 8% ECE), Tau Beta Pi
+              Engineering Honor Society Inductee (Top 12.5%).</li>
             <li>
               <strong>Relevant coursework:</strong> Analog IC Design (EE&nbsp;332),
               Microelectronic Circuits (EE&nbsp;331), Digital Circuit Design (EE&nbsp;271),
@@ -703,7 +830,8 @@
             <p class="edu-meta"><span>Hiroshima, Japan</span><span>July 2026</span></p>
           </header>
           <ul class="bullets">
-            <li>Selected for a competitive industry-academic semiconductor fabrication program bridging the University of Washington, Hiroshima University, Micron Technology, and Tokyo Electron (TEL).</li>
+            <li>Selected for a competitive industry-academic semiconductor fabrication program bridging the University
+              of Washington, Hiroshima University, Micron Technology, and Tokyo Electron (TEL).</li>
           </ul>
         </article>
 
@@ -716,7 +844,9 @@
             <p class="edu-meta"><span>Sendai, Japan</span><span>June &ndash; July 2025</span></p>
           </header>
           <ul class="bullets">
-            <li>Completed hands-on <strong>MEMS fabrication</strong> laboratory modules and observed semiconductor fabrication processes at scale, gaining direct exposure to cleanroom workflows and device fabrication techniques.</li>
+            <li>Completed hands-on <strong>MEMS fabrication</strong> laboratory modules and observed semiconductor
+              fabrication processes at scale, gaining direct exposure to cleanroom workflows and device fabrication
+              techniques.</li>
           </ul>
         </article>
 
@@ -729,7 +859,8 @@
             <p class="edu-meta"><span>Hong Kong</span><span>2022 &ndash; 2024</span></p>
           </header>
           <ul class="bullets">
-            <li>HL Physics&nbsp;7, HL Economics&nbsp;6, SL Math AA&nbsp;7, SL Chinese B&nbsp;7. Leader / co-founder of Philippines Service &amp; Cultural Immersion Project Week; Leader of Tennis QC.</li>
+            <li>HL Physics&nbsp;7, HL Economics&nbsp;6, SL Math AA&nbsp;7, SL Chinese B&nbsp;7. Leader / co-founder of
+              Philippines Service &amp; Cultural Immersion Project Week; Leader of Tennis QC.</li>
           </ul>
         </article>
       </div>
@@ -758,11 +889,13 @@
           </li>
           <li>
             <span class="award-title">Events Officer - IEEE UW Student Chapter</span>
-            <span class="award-meta">Industry networking events for the ECE student body &middot; Jan 2026 &ndash; Present</span>
+            <span class="award-meta">Industry networking events for the ECE student body &middot; Jan 2026 &ndash;
+              Present</span>
           </li>
           <li>
             <span class="award-title">Events Officer - Hong Kong Student Association at UW</span>
-            <span class="award-meta">Built an automated scheduler for 40+ members; cultural events with 2000+ attendees &middot; Oct 2025 &ndash; Present</span>
+            <span class="award-meta">Built an automated scheduler for 40+ members; cultural events with 2000+ attendees
+              &middot; Oct 2025 &ndash; Present</span>
           </li>
           <li>
             <span class="award-title">UW Line-Following Car Competition</span>
@@ -782,23 +915,33 @@
         </p>
         <div class="contact-actions">
           <a class="btn btn-primary" href="mailto:jliu1401@uw.edu">
-            <svg class="icon" aria-hidden="true"><use href="#i-email" /></svg>
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-email" />
+            </svg>
             <span>jliu1401@uw.edu</span>
           </a>
           <a class="btn" href="tel:+12065890963">
-            <svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg>
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-phone" />
+            </svg>
             <span>+1 206-589-0963</span>
           </a>
           <a class="btn" href="https://linkedin.com/in/jonathan-liu-202081252" target="_blank" rel="noopener">
-            <svg class="icon" aria-hidden="true"><use href="#i-linkedin" /></svg>
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-linkedin" />
+            </svg>
             <span>LinkedIn</span>
           </a>
           <a class="btn" href="https://github.com/JonathanLiu1401" target="_blank" rel="noopener">
-            <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-github" />
+            </svg>
             <span>GitHub</span>
           </a>
           <a class="btn btn-outline" href="./Jonathan_Liu_Resume.pdf" download>
-            <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-download" />
+            </svg>
             <span>Download Resume PDF</span>
           </a>
         </div>
@@ -815,4 +958,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
