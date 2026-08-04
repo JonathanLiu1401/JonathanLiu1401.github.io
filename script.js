@@ -89,4 +89,55 @@
   /* ----- Footer year ----- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ----- Gallery lightbox ----- */
+  var gallery = document.getElementById("upwardsGallery");
+  var dlg = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lightboxImg");
+  var lbCap = document.getElementById("lightboxCap");
+  var lbClose = document.getElementById("lightboxClose");
+  var lbPrev = document.getElementById("lightboxPrev");
+  var lbNext = document.getElementById("lightboxNext");
+
+  if (gallery && dlg && lbImg && lbCap && typeof dlg.showModal === "function") {
+    var buttons = Array.prototype.slice.call(gallery.querySelectorAll(".gallery-btn"));
+    var current = 0;
+
+    function show(i) {
+      if (!buttons.length) return;
+      current = (i + buttons.length) % buttons.length;
+      var btn = buttons[current];
+      var thumb = btn.querySelector("img");
+      lbImg.src = btn.getAttribute("data-full");
+      lbImg.alt = thumb ? thumb.alt : "";
+      lbCap.textContent =
+        btn.getAttribute("data-caption") +
+        "  (" + (current + 1) + " / " + buttons.length + ")";
+    }
+
+    buttons.forEach(function (btn, i) {
+      btn.addEventListener("click", function () {
+        show(i);
+        if (!dlg.open) dlg.showModal();
+      });
+    });
+
+    if (lbClose) lbClose.addEventListener("click", function () { dlg.close(); });
+    if (lbPrev) lbPrev.addEventListener("click", function () { show(current - 1); });
+    if (lbNext) lbNext.addEventListener("click", function () { show(current + 1); });
+
+    // Arrow-key navigation (Esc is handled natively by <dialog>)
+    dlg.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); show(current + 1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); show(current - 1); }
+    });
+
+    // Click the backdrop (outside .lightbox-inner) to dismiss
+    dlg.addEventListener("click", function (e) {
+      if (e.target === dlg) dlg.close();
+    });
+
+    // Release the full-size image when closed
+    dlg.addEventListener("close", function () { lbImg.removeAttribute("src"); });
+  }
 })();

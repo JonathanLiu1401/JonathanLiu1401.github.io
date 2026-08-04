@@ -206,6 +206,15 @@
             from first principles and closed-loop-optimized with ADE Assembler.
           </p>
           <p>
+            This past summer I closed the loop on that work at Hiroshima University's
+            <a href="#upwards">UPWARDS Summer Intensive Program</a>: I hand-drew a CMOS
+            layout in Siemens L-Edit, followed it through the fabrication flow at the
+            Research Institute for Semiconductor Engineering, and then probed and
+            characterized the finished die myself on a Keysight B1500A. Seeing a transfer
+            curve come off silicon I had drawn days earlier is what convinced me this is
+            the work I want to do.
+          </p>
+          <p>
             On the systems side, I lead the Husky Robotics drone subteam, where I am
             designing a custom STM32H743-based flight controller in Altium from schematic
             to PCB and architecting the full drone system for the URC 2026 Delivery
@@ -704,6 +713,11 @@
                 <li>Current Mirrors</li>
                 <li>Differential Pairs</li>
                 <li>Frequency Compensation</li>
+                <li>Siemens L-Edit (Layout)</li>
+                <li>CMOS Process Flow (Litho / Etch / Sputter / Anneal)</li>
+                <li>Device Characterization (Keysight B1500A)</li>
+                <li>Wafer Probing (SENTIO)</li>
+                <li>SEM / AFM / SIMS Metrology</li>
               </ul>
             </dd>
           </div>
@@ -822,18 +836,154 @@
           </ul>
         </article>
 
-        <article class="edu-card">
+        <article class="edu-card" id="upwards">
           <header class="edu-head">
             <div>
-              <h3>UPWARDS Program (UW + Hiroshima University + Micron + TEL)</h3>
-              <p class="edu-degree">Semiconductor Fabrication &amp; Industry Immersion (Accepted)</p>
+              <h3>UPWARDS Summer Intensive Program 2026 - Hiroshima University</h3>
+              <p class="edu-degree">Semiconductor CMOS Practical Training &amp; Industry Immersion (Completed)</p>
             </div>
-            <p class="edu-meta"><span>Hiroshima, Japan</span><span>July 2026</span></p>
+            <p class="edu-meta"><span>Higashi-Hiroshima, Japan</span><span>July 22 &ndash; Aug 2, 2026</span></p>
           </header>
           <ul class="bullets">
-            <li>Selected for a competitive industry-academic semiconductor fabrication program bridging the University
-              of Washington, Hiroshima University, Micron Technology, and Tokyo Electron (TEL).</li>
+            <li>Selected for the <strong>UPWARDS Summer Intensive Program 2026</strong> (University Partnership for
+              Workforce Advancement and Research &amp; Development in Semiconductors), a U.S.&ndash;Japan consortium of
+              11 universities with Micron Technology and Tokyo Electron. Twelve-day intensive covering custom CMOS
+              layout design, manufacturing, and final measurement of the fabricated chip at the
+              <strong>Research Institute for Semiconductor Engineering (RISE)</strong>, with industry engagement.</li>
+            <li><strong>Design:</strong> laid out NMOS, PMOS, and a CMOS inverter in <strong>Siemens L-Edit</strong>,
+              drawing active, poly, contact, and metal layers by hand from first principles; the resulting layouts fed
+              into the CMOS practical-training fabrication flow.</li>
+            <li><strong>Process:</strong> process and equipment lectures plus cleanroom manufacturing at RISE, spanning
+              <strong>sputtering, photolithography, etching, and annealing</strong>, with SEM, AFM, and SIMS
+              metrology sessions on the tools themselves.</li>
+            <li><strong>Characterization:</strong> probed the finished die on a <strong>SENTIO probe station</strong>
+              and swept it on a <strong>Keysight B1500A</strong> semiconductor device analyzer. Measured
+              <strong>~3.4 mA</strong> nMOS saturation drain current at V<sub>D</sub>&nbsp;=&nbsp;5&nbsp;V across a
+              clean I<sub>D</sub>&ndash;V<sub>D</sub> family, and a CMOS inverter switching at
+              <strong>~1.5 V on a 3 V supply</strong> (essentially V<sub>DD</sub>/2) with rail-to-rail output.</li>
+            <li><strong>Industry visits:</strong> Micron Memory Japan Higashi-Hiroshima, Renesas Semiconductor
+              Manufacturing Saijo Factory, and Sumitomo Heavy Industries Material Solutions ion implantation machine
+              factory; networking sessions with Tokyo Electron and with RISE staff and students.</li>
+            <li>Delivered a <strong>final technical presentation</strong> on the design-to-measurement flow, and
+              completed peace studies at the Hiroshima Peace Memorial Park and Museum.</li>
           </ul>
+
+          <div class="gallery-block">
+            <p class="gallery-title">Program Gallery</p>
+            <div class="gallery" id="upwardsGallery">
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/hiroshima-university.jpg"
+                  data-caption="Hiroshima University, Higashi-Hiroshima campus - opening day of the program.">
+                  <img src="assets/upwards/hiroshima-university-thumb.jpg" loading="lazy" width="800" height="450"
+                    alt="Hiroshima University campus monument sign" />
+                </button>
+                <figcaption>Higashi-Hiroshima campus, opening day.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/rise-layout-ledit.jpg"
+                  data-caption="Transistor and CMOS inverter layout in Siemens L-Edit at RISE, next to the safety-lecture and optional-layout handouts.">
+                  <img src="assets/upwards/rise-layout-ledit-thumb.jpg" loading="lazy" width="800" height="450"
+                    alt="Laptop showing a CMOS layout in L-Edit beside RISE safety lecture handouts" />
+                </button>
+                <figcaption>Layout design in Siemens L-Edit at RISE.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/rise-sims.jpg"
+                  data-caption="Secondary ion mass spectrometry (SIMS) instrument shown during the RISE equipment lecture.">
+                  <img src="assets/upwards/rise-sims-thumb.jpg" loading="lazy" width="800" height="1421"
+                    alt="Secondary ion mass spectrometry vacuum instrument at RISE" />
+                </button>
+                <figcaption>SIMS instrument, RISE equipment lecture.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/micron.jpg"
+                  data-caption="UPWARDS cohort at the Micron Memory Japan Higashi-Hiroshima plant.">
+                  <img src="assets/upwards/micron-thumb.jpg" loading="lazy" width="800" height="533"
+                    alt="UPWARDS cohort group photo at Micron Memory Japan" />
+                </button>
+                <figcaption>Micron Memory Japan, Higashi-Hiroshima.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/renesas.jpg"
+                  data-caption="UPWARDS cohort at the Renesas Semiconductor Manufacturing Saijo Factory, Ehime.">
+                  <img src="assets/upwards/renesas-thumb.jpg" loading="lazy" width="800" height="533"
+                    alt="UPWARDS cohort group photo at the Renesas Saijo Factory" />
+                </button>
+                <figcaption>Renesas Saijo Factory, Ehime.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/sumitomo.jpg"
+                  data-caption="Sumitomo Heavy Industries Material Solutions - ion implantation machine factory, Saijo.">
+                  <img src="assets/upwards/sumitomo-thumb.jpg" loading="lazy" width="800" height="600"
+                    alt="UPWARDS cohort in cleanroom gowning at Sumitomo Heavy Industries Material Solutions" />
+                </button>
+                <figcaption>Sumitomo Heavy Industries Material Solutions, ion implanter factory.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/anechoic-chamber.jpg"
+                  data-caption="Radio anechoic chamber during a facility tour.">
+                  <img src="assets/upwards/anechoic-chamber-thumb.jpg" loading="lazy" width="800" height="533"
+                    alt="UPWARDS cohort inside a radio anechoic chamber" />
+                </button>
+                <figcaption>Radio anechoic chamber, facility tour.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/rise-networking.jpg"
+                  data-caption="Networking session with RISE staff and students at the Research Institute for Semiconductor Engineering.">
+                  <img src="assets/upwards/rise-networking-thumb.jpg" loading="lazy" width="800" height="600"
+                    alt="Large group photo at the RISE networking session" />
+                </button>
+                <figcaption>Networking with RISE staff and students.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/rise-probe-station.jpg"
+                  data-caption="Four probe needles landed on the fabricated inverter test structure, SENTIO probe station.">
+                  <img src="assets/upwards/rise-probe-station-thumb.jpg" loading="lazy" width="800" height="450"
+                    alt="SENTIO probe station display showing four needles contacting a CMOS die" />
+                </button>
+                <figcaption>Probing the fabricated die, SENTIO probe station.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/rise-b1500a-inverter.jpg"
+                  data-caption="Measured CMOS inverter transfer characteristic on a Keysight B1500A: rail-to-rail output with a switching threshold near 1.5 V on a 3 V supply.">
+                  <img src="assets/upwards/rise-b1500a-inverter-thumb.jpg" loading="lazy" width="800" height="450"
+                    alt="Keysight B1500A displaying a measured CMOS inverter voltage transfer curve" />
+                </button>
+                <figcaption>Measured inverter VTC, Keysight B1500A.</figcaption>
+              </figure>
+
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/upwards/certificate.jpg"
+                  data-caption="Certificate presentation at the UPWARDS closing ceremony, Hiroshima University.">
+                  <img src="assets/upwards/certificate-thumb.jpg" loading="lazy" width="800" height="533"
+                    alt="Jonathan Liu receiving the UPWARDS program certificate" />
+                </button>
+                <figcaption>Certificate presentation, closing ceremony.</figcaption>
+              </figure>
+
+            </div>
+          </div>
         </article>
 
         <article class="edu-card">
@@ -875,6 +1025,11 @@
           <li>
             <span class="award-title">Lawrence &amp; Lucille Frey Endowed Electrical Engineering Scholarship - UW ECE</span>
             <span class="award-meta">Merit scholarship, 2026&ndash;2027 academic year &middot; Jul 2026</span>
+          </li>
+          <li>
+            <span class="award-title">UPWARDS Summer Intensive Program 2026 - Hiroshima University</span>
+            <span class="award-meta">Selected participant, U.S.&ndash;Japan semiconductor consortium with Micron and
+              Tokyo Electron &middot; Jul&ndash;Aug 2026</span>
           </li>
           <li>
             <span class="award-title">IEEE HKN Honor Society Inductee - Iota Upsilon Chapter, UW</span>
@@ -953,6 +1108,21 @@
       </div>
     </section>
   </main>
+
+  <!-- Lightbox for the UPWARDS gallery -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lightbox-close" type="button" id="lightboxClose" aria-label="Close photo viewer">
+      <svg class="icon" aria-hidden="true">
+        <use href="#i-close" />
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" type="button" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" type="button" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="" />
+      <p class="lightbox-cap" id="lightboxCap"></p>
+    </div>
+  </dialog>
 
   <footer class="site-footer">
     <div class="container footer-wrap">
