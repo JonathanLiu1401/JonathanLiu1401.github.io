@@ -248,15 +248,25 @@
                 reporting directly under the CEO.</p>
               <ul class="bullets">
                 <li><strong>In-Pipe Robot PERIPH board</strong>: designing and reviewing a multi-rail peripheral PCB in
-                  <strong>KiCad 10</strong> - 4S battery management front-end (<strong>TI BQ76920</strong>), dual
+                  <strong>KiCad 10</strong> - 4S battery management front-end (<strong>TI BQ7692000PWR</strong>), dual
                   brushed-DC motor drivers (<strong>DRV8234</strong>), <strong>TPSM33625</strong> 5&nbsp;V / 12&nbsp;V
                   bucks, <strong>TPS73733</strong> 3.3&nbsp;V LDO, and dual <strong>MCP4725</strong> I&sup2;C DACs on a
                   single board for an In-Pipe inspection robot.
                 </li>
-                <li><strong>BMS subsystem</strong>: architected a low-side, two-ground topology (GNDREF battery-negative
-                  and GND system-ground joined only through the R30 shunt and back-to-back <strong>CSD17571Q2</strong>
-                  protection FETs) with Kelvin SRP/SRN current sensing, TS1 charger-detect boot, master-switch off-state
-                  for &le;150&nbsp;&micro;A standby, and an XT30 charging port with TVS reverse-polarity protection.
+                <li><strong>Full-stack integration</strong>: owning the <strong>hardware &rarr; firmware &rarr;
+                    software</strong> path end to end - bringing the PERIPH board up against <strong>Arduino</strong>
+                  motor and sensor firmware and a <strong>Python/ROS2</strong> host with live telemetry, video
+                  streaming, and teleoperation dashboards, validating the board in-system rather than on the bench
+                  alone.
+                </li>
+                <li><strong>Agentic engineering</strong>: built custom <strong>Claude Code</strong> agent skills and
+                  <strong>MCP</strong> tooling directly into the EDA workflow - automated datasheet analysis, netlist
+                  and BOM/stock verification, manufacturability checks, and placement/routing review - compressing
+                  schematic-to-fabrication turnaround and surfacing defects earlier in the design cycle.
+                </li>
+                <li><strong>BMS subsystem</strong>: architected the battery-management and power-protection design -
+                  cell monitoring, Kelvin current sensing, protection FETs, charger-detect wake, low-power standby, and
+                  a reverse-polarity-protected charging port.
                 </li>
                 <li><strong>Layout &amp; DFM</strong>: iterating through full ERC/DRC and JLCPCB manufacturability
                   sweeps using the <code>kicad-cli</code> and <code>pcbnew</code> Python API - current-aware via sizing
@@ -274,7 +284,7 @@
           <li class="timeline-item">
             <article>
               <header class="timeline-head">
-                <h3>Undergraduate Research Assistant</h3>
+                <h3>Embedded Systems Researcher</h3>
                 <p class="timeline-org">Sensors, Energy, and Automation Laboratory (SEAL)</p>
                 <p class="timeline-meta"><span>Jan 2026 &ndash; Present</span><span>Seattle, WA</span></p>
               </header>
@@ -311,9 +321,9 @@
               <ul class="bullets">
                 <li>Spearheaded recruitment and technical onboarding for the 20+ member Drone subteam; implemented
                   training pipelines that improved member retention and accelerated project completion timelines.</li>
-                <li>Piloted and managed the full development lifecycle of three custom PCBs (Flight Controller, ESC,
-                  Power Distribution Board), coordinating technical deliverables, design reviews, and onboarding of new
-                  contributors.</li>
+                <li><strong>Leading the full three-PCB program</strong> - Flight Controller, <strong>ESC</strong>, and
+                  Power Distribution Board - directing architecture, BOM selection, technical deliverables, and formal
+                  design reviews across the whole development lifecycle.</li>
               </ul>
             </article>
           </li>
