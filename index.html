@@ -254,15 +254,17 @@
                   single board for an In-Pipe inspection robot.
                 </li>
                 <li><strong>Full-stack integration</strong>: owning the <strong>hardware &rarr; firmware &rarr;
-                    software</strong> path end to end - bringing the PERIPH board up against <strong>Arduino</strong>
-                  motor and sensor firmware and a <strong>Python/ROS2</strong> host with live telemetry, video
-                  streaming, and teleoperation dashboards, validating the board in-system rather than on the bench
-                  alone.
+                    software</strong> path end to end - bringing the PERIPH board up against <strong>ESP32-P4</strong>
+                  firmware and a <strong>Python</strong> control host that streams UDP telemetry and
+                  <strong>WebRTC</strong> video to a browser operator dashboard, validating the board in-system rather
+                  than on the bench alone.
                 </li>
                 <li><strong>Agentic engineering</strong>: built custom <strong>Claude Code</strong> agent skills and
-                  <strong>MCP</strong> tooling directly into the EDA workflow - automated datasheet analysis, netlist
-                  and BOM/stock verification, manufacturability checks, and placement/routing review - compressing
-                  schematic-to-fabrication turnaround and surfacing defects earlier in the design cycle.
+                  <strong>MCP</strong> tooling directly into the PCB and software workflow - automated datasheet
+                  analysis, netlist and BOM/stock verification, manufacturability checks, and placement/routing review.
+                  Open-sourced as <a href="https://github.com/JonathanLiu1401/eda-review" target="_blank"
+                    rel="noopener">eda-review</a> and <a href="https://github.com/JonathanLiu1401/multi-agentic-harness"
+                    target="_blank" rel="noopener">multi-agentic-harness</a>.
                 </li>
                 <li><strong>BMS subsystem</strong>: architected the battery-management and power-protection design -
                   cell monitoring, Kelvin current sensing, protection FETs, charger-detect wake, low-power standby, and
@@ -350,7 +352,8 @@
                     <li>Engineered <strong>DSHOT600</strong> communication protocol for ESCs driving 750&nbsp;KV BLDC
                       motors.</li>
                     <li>Established <strong>MAVLink</strong> interfaces between the FC and an NVIDIA <strong>Jetson Orin
-                        Nano</strong> for computer vision and autonomous navigation.</li>
+                        Nano</strong> for computer vision and autonomous navigation, enabling fully autonomous drone
+                      flight.</li>
                     <li>Designed redundant power-sensing and regulation architectures using multiple ICs to prevent
                       in-flight failure.</li>
                     <li>Implemented telemetry collection and broadcasting circuitry with full
@@ -760,8 +763,24 @@
                 <li>Python (NumPy / SciPy / PyTorch)</li>
                 <li>Java</li>
                 <li>MATLAB</li>
+                <li>ROS2</li>
                 <li>Linux / Bash</li>
                 <li>Git</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>Agentic Engineering</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>Claude Code Agent Skills</li>
+                <li>MCP Tool Integration</li>
+                <li>EDA Workflow Automation</li>
+                <li><a href="https://github.com/JonathanLiu1401/eda-review" target="_blank"
+                    rel="noopener">eda-review</a></li>
+                <li><a href="https://github.com/JonathanLiu1401/multi-agentic-harness" target="_blank"
+                    rel="noopener">multi-agentic-harness</a></li>
               </ul>
             </dd>
           </div>
