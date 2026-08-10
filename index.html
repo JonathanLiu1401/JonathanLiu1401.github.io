@@ -248,10 +248,10 @@
                 reporting directly under the CEO.</p>
               <ul class="bullets">
                 <li><strong>In-Pipe Robot PERIPH board</strong>: designing and reviewing a multi-rail peripheral PCB in
-                  <strong>KiCad 10</strong> - 4S battery management front-end (<strong>TI BQ7692000PWR</strong>), dual
-                  brushed-DC motor drivers (<strong>DRV8234</strong>), <strong>TPSM33625</strong> 5&nbsp;V / 12&nbsp;V
-                  bucks, <strong>TPS73733</strong> 3.3&nbsp;V LDO, and dual <strong>MCP4725</strong> I&sup2;C DACs on a
-                  single board for an In-Pipe inspection robot.
+                  <strong>KiCad 10</strong> - a 4S <strong>high-side</strong> battery-management front-end
+                  (<strong>TI BQ76922</strong>), dual brushed-DC motor drivers (<strong>DRV8234</strong>),
+                  <strong>TPSM33625</strong> 5&nbsp;V / 12&nbsp;V bucks, a <strong>TPS7A2033</strong> 3.3&nbsp;V LDO,
+                  and dual <strong>MCP4725</strong> I&sup2;C DACs on a single board for an In-Pipe inspection robot.
                 </li>
                 <li><strong>ESP32-P4 firmware from scratch</strong>: wrote the complete robot-side firmware in
                   <strong>C</strong> on <strong>ESP-IDF</strong> (~10k lines) - Wi-Fi station bring-up, an HTTP command
@@ -276,9 +276,12 @@
                     rel="noopener">eda-review</a> and <a href="https://github.com/JonathanLiu1401/multi-agentic-harness"
                     target="_blank" rel="noopener">multi-agentic-harness</a>.
                 </li>
-                <li><strong>BMS subsystem</strong>: architected the battery-management and power-protection design -
-                  cell monitoring, Kelvin current sensing, protection FETs, charger-detect wake, low-power standby, and
-                  a reverse-polarity-protected charging port.
+                <li><strong>BMS redesign (low-side &rarr; high-side)</strong>: re-architected the 4S battery-management
+                  and power-protection subsystem around the <strong>BQ76922</strong> so the protection FETs switch
+                  <strong>PACK+</strong> instead of breaking the ground return, removing the split-ground I&sup2;C
+                  failure mode of the previous revision and letting the AFE arm the FETs autonomously without a host.
+                  Covered cell monitoring, Kelvin shunt current sensing, common-drain CHG/DSG FETs with precharge,
+                  and a reverse-polarity-protected charge port.
                 </li>
                 <li><strong>Layout &amp; DFM</strong>: iterating through full ERC/DRC and JLCPCB manufacturability
                   sweeps using the <code>kicad-cli</code> and <code>pcbnew</code> Python API - current-aware via sizing
