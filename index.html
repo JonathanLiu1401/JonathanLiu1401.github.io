@@ -253,10 +253,20 @@
                   bucks, <strong>TPS73733</strong> 3.3&nbsp;V LDO, and dual <strong>MCP4725</strong> I&sup2;C DACs on a
                   single board for an In-Pipe inspection robot.
                 </li>
-                <li><strong>Full-stack integration</strong>: owning the <strong>hardware &rarr; firmware &rarr;
-                    software</strong> path end to end - bringing the PERIPH board up against <strong>ESP32-P4</strong>
-                  firmware and a <strong>Python</strong> control host that streams UDP telemetry and
-                  <strong>WebRTC</strong> video to a browser operator dashboard. <strong>First-pass bring-up verified
+                <li><strong>ESP32-P4 firmware from scratch</strong>: wrote the complete robot-side firmware in
+                  <strong>C</strong> on <strong>ESP-IDF</strong> (~10k lines) - Wi-Fi station bring-up, an HTTP command
+                  service, a binary TLV telemetry task over UDP, hardware H.264 <strong>RTP</strong> video streaming,
+                  OTA update, and health/diagnostics endpoints.
+                </li>
+                <li><strong>Custom peripheral drivers</strong>: authored bare-metal I&sup2;C drivers for the
+                  <strong>DRV8234</strong> motor drivers, <strong>BQ76922</strong> battery monitor,
+                  <strong>MCP4725</strong> DACs, <strong>AS5600</strong> magnetic encoders, and a PCA9546 I&sup2;C
+                  multiplexer, with fault handling and watchdog-backed failsafes.
+                </li>
+                <li><strong>Base-host control stack</strong>: built the operator-side <strong>Python</strong>
+                  application end to end - an async HTTP/SSE API, telemetry decoding and caching, MediaMTX-backed
+                  <strong>WebRTC</strong> video, a browser dashboard, and an independent IMU bridge - closing the
+                  <strong>hardware &rarr; firmware &rarr; software</strong> loop. <strong>First-pass bring-up verified
                     clean within one day</strong> of PCB arrival.
                 </li>
                 <li><strong>Agentic engineering</strong>: built custom <strong>Claude Code</strong> agent skills and
@@ -743,6 +753,8 @@
                 <li>Altium Designer</li>
                 <li>KiCad</li>
                 <li>STM32 (CubeIDE / CubeMX / HAL)</li>
+                <li>ESP32-P4 / ESP-IDF</li>
+                <li>Bare-Metal I&sup2;C Device Drivers</li>
                 <li>Arduino</li>
                 <li>FPGA (SystemVerilog)</li>
                 <li>Intel Quartus</li>
