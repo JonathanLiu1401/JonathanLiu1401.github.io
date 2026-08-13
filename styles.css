@@ -843,8 +843,12 @@ html[data-theme="dark"] .tag-list li { background: #1c1c20; }
   width: 26px;
   height: 26px;
   border-radius: 5px;
-  background: #000;
+  /* Logos carry their own plate so each mark keeps the contrast it was
+     drawn for, in either theme: light plate by default, dark where the
+     artwork is light-on-black. */
+  background: #fff;
   border: 1px solid var(--border);
   object-fit: contain;
   flex-shrink: 0;
 }
+.org-logo--onblack { background: #000; }
