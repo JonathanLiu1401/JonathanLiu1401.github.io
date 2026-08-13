@@ -229,8 +229,40 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: inline-block; }
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 4rem 0 3rem;
+  padding: 3.2rem 0 2.6rem;
 }
+/* Two columns from tablet up: the copy carries the pitch, the photo fills
+   what was empty space and puts the semiconductor work above the fold. */
+.hero-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+    gap: 3rem;
+  }
+}
+.hero-figure {
+  margin: 0;
+  min-width: 0;
+}
+.hero-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+.hero-figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.hero-figure a { display: block; }
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -342,6 +374,11 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: inline-block; }
   color: var(--fg);
   font-weight: 500;
   margin: 0.2rem 0 0.15rem;
+  /* flex so a logo + org link sits on one baseline with the trailing text */
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 0.3rem;
 }
 .timeline-meta {
   display: flex;
@@ -792,3 +829,22 @@ html[data-theme="dark"] .tag-list li { background: #1c1c20; }
 }
 
 .contact-lead { line-height: 1.7; }
+
+/* ---------- Org attribution (logo + link) ---------- */
+.org-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--fg);
+  font-weight: 500;
+}
+.org-link:hover { color: var(--accent); text-decoration: none; }
+.org-logo {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  background: #000;
+  border: 1px solid var(--border);
+  object-fit: contain;
+  flex-shrink: 0;
+}
