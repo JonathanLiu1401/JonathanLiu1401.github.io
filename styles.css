@@ -740,3 +740,22 @@ html[data-theme="dark"] .tag-list li { background: #1c1c20; }
   .tag-list li { background: #fff; border: 1px solid #ccc; color: #333; }
   .gallery-block, .lightbox { display: none !important; }
 }
+
+/* ---------- Project figures ---------- */
+.project-figs {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin: 0 0 0.9rem;
+}
+.project-figs figure { margin: 0; }
+.project-figs .gallery-btn img { aspect-ratio: 16 / 10; }
+.project-figs figcaption {
+  font-size: 0.74rem;
+  line-height: 1.35;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+@media print {
+  .project-figs { grid-template-columns: repeat(2, 1fr); }
+}

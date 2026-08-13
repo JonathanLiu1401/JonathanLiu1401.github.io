@@ -453,6 +453,26 @@
               then closed-loop-optimized via <strong>ADE Assembler</strong>
               multi-objective sizing under all-saturation constraints.
             </p>
+            <div class="project-figs">
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/projects/ota-schematic.jpg"
+                  data-caption="5T-OTA core in Cadence Virtuoso (GPDK045): NMOS input pair, PMOS current-mirror load, and an NMOS tail mirrored from a 10 uA reference. Device widths, lengths, and annotated node voltages shown.">
+                  <img src="assets/projects/ota-schematic-thumb.jpg" loading="lazy" width="800" height="596"
+                    alt="Cadence Virtuoso schematic of a five-transistor OTA with annotated device sizes and node voltages" />
+                </button>
+                <figcaption>5T-OTA core schematic, annotated sizing and bias.</figcaption>
+              </figure>
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/projects/ota-transient.jpg"
+                  data-caption="Closed-loop transient at 100 MHz: a 250 mV peak-to-peak input produces a clean 1.0 V peak-to-peak output for a gain of 4.0, with no clipping, confirming every device stays in saturation across the swing.">
+                  <img src="assets/projects/ota-transient-thumb.jpg" loading="lazy" width="800" height="349"
+                    alt="Transient simulation showing a 250 mV input and clean 1 V peak-to-peak output at 100 MHz" />
+                </button>
+                <figcaption>Closed-loop transient, 1.0 V swing at 100 MHz.</figcaption>
+              </figure>
+            </div>
             <ul class="tag-list" aria-label="Tags">
               <li>Cadence Virtuoso</li>
               <li>ADE Assembler</li>
@@ -479,6 +499,26 @@
               voltage transfer curve and 10&ndash;90% rise/fall times, and derived the PMOS
               sizing needed to center the switching threshold at V<sub>DD</sub>/2.
             </p>
+            <div class="project-figs">
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/projects/inverter-layout.jpg"
+                  data-caption="Full-custom CMOS inverter layout in Virtuoso Layout XL (FreePDK45): PMOS in the nwell on top, NMOS below, a shared vertical poly gate, metal1 VDD and GND rails, and body contacts on the outer sides.">
+                  <img src="assets/projects/inverter-layout-thumb.jpg" loading="lazy" width="520" height="763"
+                    alt="Full-custom CMOS inverter layout showing poly gate, active regions, contacts and metal1 rails" />
+                </button>
+                <figcaption>Full-custom inverter layout, FreePDK45.</figcaption>
+              </figure>
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/projects/inverter-drc-lvs.jpg"
+                  data-caption="Calibre RVE physical verification: nmDRC reports No Results Found across all 167 rule checks, and the nmLVS comparison returns CORRECT with 4 matching ports, 4 matching nets, and both device instances matched.">
+                  <img src="assets/projects/inverter-drc-lvs-thumb.jpg" loading="lazy" width="800" height="421"
+                    alt="Calibre RVE windows showing zero DRC violations and a correct LVS comparison" />
+                </button>
+                <figcaption>Calibre nmDRC/nmLVS signoff, zero violations.</figcaption>
+              </figure>
+            </div>
             <ul class="tag-list" aria-label="Tags">
               <li>Virtuoso Layout XL</li>
               <li>Calibre DRC/LVS</li>
@@ -507,6 +547,26 @@
               comparable transimpedance). Drove sizing decisions through parametric sweeps in
               ADE Explorer.
             </p>
+            <div class="project-figs">
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/projects/tia-schematic.jpg"
+                  data-caption="5T-OTA transimpedance amplifier in GPDK045: the OTA core closed by a 10 kOhm feedback resistor, driven by a photodiode model (100 fF junction capacitance) with a 10 fF load.">
+                  <img src="assets/projects/tia-schematic-thumb.jpg" loading="lazy" width="800" height="449"
+                    alt="Cadence schematic of a 5T-OTA transimpedance amplifier with feedback resistor and photodiode model" />
+                </button>
+                <figcaption>5T-OTA TIA with photodiode front-end.</figcaption>
+              </figure>
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/projects/tia-prbs.jpg"
+                  data-caption="2 Gb/s PRBS transient on the 5T-OTA TIA. Individual bit transitions resolve cleanly at a 500 ps bit period, where the direct-RC front-end at the same transimpedance smears into inter-symbol interference.">
+                  <img src="assets/projects/tia-prbs-thumb.jpg" loading="lazy" width="800" height="394"
+                    alt="Transient response of the TIA to a 2 Gb/s pseudo-random bit stream showing resolved bit transitions" />
+                </button>
+                <figcaption>2 Gb/s PRBS response, bits resolved.</figcaption>
+              </figure>
+            </div>
             <ul class="tag-list" aria-label="Tags">
               <li>Cadence Virtuoso</li>
               <li>GPDK045</li>
@@ -536,6 +596,17 @@
               load regulation within <strong>0.4 %</strong> from open-circuit to
               1&nbsp;mA. Every design specification met on hardware.
             </p>
+            <div class="project-figs">
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/projects/boost-regulated.jpg"
+                  data-caption="LTspice transient of the full chain: V(p) rectified DC from the bridge, V(vb) the boost-stage node, and V(out) the regulated rail settling flat at roughly 10.4 V.">
+                  <img src="assets/projects/boost-regulated-thumb.jpg" loading="lazy" width="800" height="533"
+                    alt="LTspice plot showing rectified, boosted, and regulated output voltages settling to a flat rail" />
+                </button>
+                <figcaption>LTspice: rectified, boosted, and regulated rails.</figcaption>
+              </figure>
+            </div>
             <ul class="tag-list" aria-label="Tags">
               <li>LTspice</li>
               <li>Boost Converter</li>

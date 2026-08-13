@@ -90,8 +90,12 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ----- Gallery lightbox ----- */
-  var gallery = document.getElementById("upwardsGallery");
+  /* ----- Gallery lightbox -----
+     Works across any number of galleries: the UPWARDS grid and the per-project
+     figure strips. Prev/next stay inside whichever gallery was opened. */
+  var galleries = Array.prototype.slice.call(
+    document.querySelectorAll("#upwardsGallery, .project-figs")
+  );
   var dlg = document.getElementById("lightbox");
   var lbImg = document.getElementById("lightboxImg");
   var lbCap = document.getElementById("lightboxCap");
@@ -99,8 +103,8 @@
   var lbPrev = document.getElementById("lightboxPrev");
   var lbNext = document.getElementById("lightboxNext");
 
-  if (gallery && dlg && lbImg && lbCap && typeof dlg.showModal === "function") {
-    var buttons = Array.prototype.slice.call(gallery.querySelectorAll(".gallery-btn"));
+  if (galleries.length && dlg && lbImg && lbCap && typeof dlg.showModal === "function") {
+    var buttons = [];
     var current = 0;
 
     function show(i) {
@@ -115,10 +119,14 @@
         "  (" + (current + 1) + " / " + buttons.length + ")";
     }
 
-    buttons.forEach(function (btn, i) {
-      btn.addEventListener("click", function () {
-        show(i);
-        if (!dlg.open) dlg.showModal();
+    galleries.forEach(function (gallery) {
+      var group = Array.prototype.slice.call(gallery.querySelectorAll(".gallery-btn"));
+      group.forEach(function (btn, i) {
+        btn.addEventListener("click", function () {
+          buttons = group;
+          show(i);
+          if (!dlg.open) dlg.showModal();
+        });
       });
     });
 
