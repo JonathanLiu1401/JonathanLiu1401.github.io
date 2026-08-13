@@ -465,6 +465,60 @@
 
           <article class="project-card">
             <header>
+              <h3>Full-Custom CMOS Inverter: Layout to DRC/LVS Signoff</h3>
+              <p class="project-sub">EE 332 &middot; Cadence Virtuoso Layout XL &middot; FreePDK45 (45nm)</p>
+            </header>
+            <p>
+              Ran the complete custom IC flow on a CMOS inverter: schematic capture,
+              <strong>Spectre</strong> simulation, and <strong>full-custom layout</strong> in
+              <strong>Virtuoso Layout XL</strong> (device placement, metal routing, well and
+              body contacts). Signed off physical verification in
+              <strong>Siemens Calibre nmDRC/nmLVS</strong> with <strong>zero violations</strong>
+              across 167 rule checks and a clean LVS match, then analyzed post-layout
+              <strong>RC parasitic</strong> impact on propagation delay. Characterized the
+              voltage transfer curve and 10&ndash;90% rise/fall times, and derived the PMOS
+              sizing needed to center the switching threshold at V<sub>DD</sub>/2.
+            </p>
+            <ul class="tag-list" aria-label="Tags">
+              <li>Virtuoso Layout XL</li>
+              <li>Calibre DRC/LVS</li>
+              <li>FreePDK45</li>
+              <li>Parasitic Extraction</li>
+              <li>Full-Custom Layout</li>
+            </ul>
+            <p class="project-date">April 2026</p>
+          </article>
+
+          <article class="project-card">
+            <header>
+              <h3>Analog Building Blocks: Diff Pairs, Mirrors, and a 5T-OTA TIA</h3>
+              <p class="project-sub">EE 332 CAD Series &middot; Cadence Virtuoso &middot; GPDK045 (45nm)</p>
+            </header>
+            <p>
+              Designed and simulated the core analog cells in <strong>GPDK045</strong>:
+              differential amplifiers with both ideal and NMOS-tail current sources,
+              current mirrors, and a 5T-OTA <strong>transimpedance amplifier</strong> for a
+              photodiode front-end. Extracted device parameters
+              (V<sub>th</sub>, &micro;C<sub>ox</sub>, &lambda;) directly from
+              <strong>Spectre</strong> DC operating points, characterized
+              <strong>CMRR degradation under drain-resistance mismatch</strong>, and compared
+              the TIA against a direct-RC front-end on <strong>2&nbsp;Gb/s PRBS</strong>
+              eye response (159&nbsp;MHz to <strong>947&nbsp;MHz</strong> bandwidth at
+              comparable transimpedance). Drove sizing decisions through parametric sweeps in
+              ADE Explorer.
+            </p>
+            <ul class="tag-list" aria-label="Tags">
+              <li>Cadence Virtuoso</li>
+              <li>GPDK045</li>
+              <li>Differential Amplifiers</li>
+              <li>TIA</li>
+              <li>Mismatch / CMRR</li>
+            </ul>
+            <p class="project-date">March &ndash; June 2026</p>
+          </article>
+
+          <article class="project-card">
+            <header>
               <h3>Adjustable AC-DC Boost Converter</h3>
               <p class="project-sub">EE 331 Final Project &middot; LTspice &middot; Breadboarded &amp; Validated</p>
             </header>
@@ -725,15 +779,24 @@
             <dd>
               <ul class="tag-list">
                 <li>Cadence Virtuoso (Schematic &amp; Layout)</li>
+                <li>Virtuoso Layout XL</li>
+                <li>Spectre</li>
                 <li>ADE Explorer</li>
                 <li>ADE Assembler</li>
-                <li>GPDK045 (45nm CMOS)</li>
+                <li>Siemens Calibre (nmDRC / nmLVS)</li>
+                <li>Full-Custom Layout (Placement &amp; Routing)</li>
+                <li>Parasitic Extraction</li>
+                <li>Device Modeling &amp; Parameter Extraction</li>
+                <li>GPDK045 / FreePDK45 (45nm CMOS)</li>
                 <li>LTspice</li>
                 <li>SPICE</li>
                 <li>Op-Amps</li>
                 <li>OTAs</li>
+                <li>Transimpedance Amplifiers</li>
                 <li>Current Mirrors</li>
                 <li>Differential Pairs</li>
+                <li>Device Mismatch &amp; CMRR</li>
+                <li>gm/I<sub>D</sub> Sizing</li>
                 <li>Frequency Compensation</li>
                 <li>Siemens L-Edit (Layout)</li>
                 <li>CMOS Process Flow (Litho / Etch / Sputter / Anneal)</li>
@@ -873,6 +936,14 @@
               Energy Systems (EE&nbsp;351), Control System Analysis (EE&nbsp;447),
               Hardware/Software Interface (CSE&nbsp;351), Data Structures (CSE&nbsp;123).
             </li>
+            <li>
+              <strong>In progress (Fall 2026 &ndash; Spring 2027):</strong>
+              <strong>EE&nbsp;435/436 Analog IC Design</strong>, a full
+              <strong>tapeout</strong> project spanning schematic design, full-custom layout,
+              <strong>PVT corner</strong> and <strong>Monte Carlo</strong> verification,
+              DRC/LVS signoff, and silicon test, plus
+              <strong>Memory Architecture</strong> and Advanced VLSI.
+            </li>
           </ul>
         </article>
 
@@ -889,7 +960,8 @@
               Workforce Advancement and Research &amp; Development in Semiconductors), a U.S.&ndash;Japan consortium of
               11 universities with Micron Technology and Tokyo Electron. Twelve-day intensive covering custom CMOS
               layout design, manufacturing, and final measurement of the fabricated chip at the
-              <strong>Research Institute for Semiconductor Engineering (RISE)</strong>, with industry engagement.</li>
+              <strong>Research Institute for Semiconductor Engineering (RISE)</strong>, with industry engagement.
+              Attended on approved leave mid-way through the Trellis Robotics internship, then returned to complete it.</li>
             <li><strong>Design:</strong> laid out NMOS, PMOS, and a CMOS inverter in <strong>Siemens L-Edit</strong>,
               drawing active, poly, contact, and metal layers by hand from first principles; the resulting layouts fed
               into the CMOS practical-training fabrication flow.</li>
