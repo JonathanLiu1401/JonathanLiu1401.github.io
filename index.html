@@ -115,8 +115,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
           <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-actions">
@@ -647,17 +647,37 @@
                   </svg>
                 </a>
               </h3>
-              <p class="project-sub">EE 271 Course Project &middot; SystemVerilog &middot; Cyclone V GX (DE1-SoC)</p>
+              <p class="project-sub">EE 271 Course Project &middot; SystemVerilog &middot; Cyclone V (DE1-SoC)</p>
             </header>
             <p>
               Implemented a hardware rhythm game in <strong>SystemVerilog</strong>
-              (~3,200 lines across 36 modules) on an Intel <strong>Cyclone V GX</strong>
-              (DE1-SoC): designed a 50&nbsp;MHz &rarr; 25&nbsp;MHz PLL-derived
+              (~3,200 lines across 36 modules) on an Intel <strong>Cyclone V</strong>
+              (DE1-SoC, 5CSEMA5F31C6): designed a 50&nbsp;MHz &rarr; 25&nbsp;MHz PLL-derived
               640&times;480/60&nbsp;Hz <strong>VGA</strong> timing chain, a 32-bit LFSR
               lane sequencer, 4-lane note-spawn FIFO engine, 50&nbsp;ms debounced input,
               a saturating 16-bit scoring unit, and a 48&nbsp;kHz I&sup2;S audio path
               through a Wolfson WM8731 CODEC.
             </p>
+            <div class="project-figs">
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/projects/fpga-block-diagram.jpg"
+                  data-caption="System block diagram: nine subsystems in a single 50 MHz clock domain, with slower events derived as enable pulses (60 Hz frame_en, 48 kHz audio advance). Covers VGA rendering, audio playback with three track ROMs, LFSR note generation, spawn control, the four note FIFO lanes, and scoring.">
+                  <img src="assets/projects/fpga-block-diagram-thumb.jpg" loading="lazy" width="800" height="572"
+                    alt="Block diagram of the FPGA rhythm game showing nine subsystems and their signal paths" />
+                </button>
+                <figcaption>System block diagram, single 50&nbsp;MHz clock domain.</figcaption>
+              </figure>
+              <figure>
+                <button class="gallery-btn" type="button"
+                  data-full="assets/projects/fpga-fsm.jpg"
+                  data-caption="Per-lane hit_detection_unit FSM (Mealy): a ready state that scores against note position and a cooldown state that ignores presses until a 50 ms timer expires, eliminating button bounce in logic rather than hardware.">
+                  <img src="assets/projects/fpga-fsm-thumb.jpg" loading="lazy" width="800" height="606"
+                    alt="Hand-drawn Mealy state machine diagram for the per-lane hit detection unit" />
+                </button>
+                <figcaption>Hit-detection FSM, debounce solved in logic.</figcaption>
+              </figure>
+            </div>
             <ul class="tag-list" aria-label="Tags">
               <li>SystemVerilog</li>
               <li>FPGA</li>
@@ -840,146 +860,40 @@
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <dl class="skills-grid">
-          <div class="skill-group">
-            <dt>VLSI</dt>
-            <dd>
-              <ul class="tag-list">
-                <li>Cadence Virtuoso (Schematic &amp; Layout)</li>
-                <li>Virtuoso Layout XL</li>
-                <li>Spectre</li>
-                <li>ADE Explorer</li>
-                <li>ADE Assembler</li>
-                <li>Siemens Calibre (nmDRC / nmLVS)</li>
-                <li>Full-Custom Layout (Placement &amp; Routing)</li>
-                <li>Parasitic Extraction</li>
-                <li>Device Modeling &amp; Parameter Extraction</li>
-                <li>GPDK045 / FreePDK45 (45nm CMOS)</li>
-                <li>LTspice</li>
-                <li>SPICE</li>
-                <li>Op-Amps</li>
-                <li>OTAs</li>
-                <li>Transimpedance Amplifiers</li>
-                <li>Current Mirrors</li>
-                <li>Differential Pairs</li>
-                <li>Device Mismatch &amp; CMRR</li>
-                <li>gm/ID Sizing</li>
-                <li>Frequency Compensation</li>
-                <li>Siemens L-Edit (Layout)</li>
-                <li>CMOS Process Flow (Litho / Etch / Sputter / Anneal)</li>
-                <li>Device Characterization (Keysight B1500A)</li>
-                <li>Wafer Probing (SENTIO)</li>
-                <li>SEM / AFM / SIMS Metrology</li>
-              </ul>
-            </dd>
-          </div>
-
-          <div class="skill-group">
-            <dt>Hardware &amp; Embedded</dt>
-            <dd>
-              <ul class="tag-list">
-                <li>Altium Designer</li>
-                <li>KiCad</li>
-                <li>STM32 (CubeIDE / CubeMX / HAL)</li>
-                <li>ESP32-P4 / ESP-IDF</li>
-                <li>Bare-Metal I&sup2;C Device Drivers</li>
-                <li>Arduino</li>
-                <li>FPGA (SystemVerilog)</li>
-                <li>Intel Quartus</li>
-                <li>ModelSim</li>
-                <li>BLDC Motor Control</li>
-                <li>LDOs</li>
-                <li>Soldering</li>
-                <li>Oscilloscopes</li>
-                <li>Logic Analyzers</li>
-              </ul>
-            </dd>
-          </div>
-
-          <div class="skill-group">
-            <dt>Software</dt>
-            <dd>
-              <ul class="tag-list">
-                <li>C / C++</li>
-                <li>Python (NumPy / SciPy / PyTorch)</li>
-                <li>Java</li>
-                <li>MATLAB</li>
-                <li>ROS2</li>
-                <li>Linux / Bash</li>
-                <li>Git</li>
-              </ul>
-            </dd>
-          </div>
-
-          <div class="skill-group">
-            <dt>Agentic Engineering</dt>
-            <dd>
-              <ul class="tag-list">
-                <li>Claude Code Agent Skills</li>
-                <li>MCP Tool Integration</li>
-                <li>EDA Workflow Automation</li>
-                <li><a href="https://github.com/JonathanLiu1401/eda-review" target="_blank"
-                    rel="noopener">eda-review</a></li>
-                <li><a href="https://github.com/JonathanLiu1401/multi-agentic-harness" target="_blank"
-                    rel="noopener">multi-agentic-harness</a></li>
-              </ul>
-            </dd>
-          </div>
-
-          <div class="skill-group">
-            <dt>CAD / Mechanical</dt>
-            <dd>
-              <ul class="tag-list">
-                <li>Fusion360</li>
-                <li>OpenSCAD</li>
-              </ul>
-            </dd>
-          </div>
-
-          <div class="skill-group">
-            <dt>Languages</dt>
-            <dd>
-              <ul class="tag-list">
-                <li>English (Native)</li>
-                <li>Mandarin (Native)</li>
-                <li>Cantonese (Native)</li>
-                <li>Japanese (Working)</li>
-              </ul>
-            </dd>
-          </div>
-
-          <div class="skill-group">
-            <dt>Certifications</dt>
-            <dd>
-              <ul class="tag-list">
-                <li>MATLAB Certified (MathWorks, 2026)</li>
-                <li>International Baccalaureate Diploma (2024)</li>
-                <li>ABRSM Grade 8 Violin Performance</li>
-                <li>PADI Open Water Scuba Diver</li>
-              </ul>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
     <!-- TECHNICAL AREAS OF INTEREST -->
-    <section id="interests" class="section">
+    <section id="interests" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Technical Areas of Interest</h2>
-        <p>Operational amplifier and OTA topologies (single-stage, telescopic, folded cascode, two-stage
-          Miller-compensated); frequency compensation and stability analysis; electronic-photonic integration and
-          silicon-photonic interface circuitry (modulator drivers, transimpedance amplifiers, photodiode front-ends);
-          high-speed data converters (SAR ADCs, &Sigma;&Delta; ADCs, current-steering DACs); clock-and-data recovery and
-          phase-locked loops; switched-capacitor circuits and discrete-time signal processing; reference and bias
-          generation (bandgap references, current mirrors); low-noise amplifier design and noise analysis (kT/C, 1/f,
-          thermal); bioelectronic and neurophotonic interface circuits for biomedical signal chains; energy-efficient
-          mixed-signal I/O for data-center and AI-accelerator interconnect; nanoscale CMOS device physics and analog
-          layout for matching and parasitic minimization.</p>
+        <dl class="interest-grid">
+          <div class="interest-group">
+            <dt>Amplifiers</dt>
+            <dd>Op-amp and OTA topologies (single-stage, telescopic, folded cascode, two-stage
+              Miller-compensated), frequency compensation and stability analysis, and low-noise
+              design with kT/C, 1/f, and thermal noise budgets.</dd>
+          </div>
+          <div class="interest-group">
+            <dt>Data conversion &amp; timing</dt>
+            <dd>High-speed converters (SAR ADCs, &Sigma;&Delta; ADCs, current-steering DACs),
+              clock-and-data recovery, phase-locked loops, and switched-capacitor
+              discrete-time signal processing.</dd>
+          </div>
+          <div class="interest-group">
+            <dt>Photonic &amp; high-speed I/O</dt>
+            <dd>Electronic-photonic integration and silicon-photonic interface circuitry
+              (modulator drivers, transimpedance amplifiers, photodiode front-ends), and
+              energy-efficient mixed-signal I/O for data-center and AI-accelerator interconnect.</dd>
+          </div>
+          <div class="interest-group">
+            <dt>Devices &amp; layout</dt>
+            <dd>Nanoscale CMOS device physics, analog layout for matching and parasitic
+              minimization, and reference and bias generation (bandgap references,
+              current mirrors).</dd>
+          </div>
+          <div class="interest-group">
+            <dt>Bioelectronics</dt>
+            <dd>Bioelectronic and neurophotonic interface circuits for biomedical signal chains.</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -1200,8 +1114,135 @@
       </div>
     </section>
 
+    <!-- SKILLS -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <dl class="skills-grid">
+          <div class="skill-group">
+            <dt>VLSI</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>Cadence Virtuoso (Schematic &amp; Layout)</li>
+                <li>Virtuoso Layout XL</li>
+                <li>Spectre</li>
+                <li>ADE Explorer</li>
+                <li>ADE Assembler</li>
+                <li>Siemens Calibre (nmDRC / nmLVS)</li>
+                <li>Full-Custom Layout (Placement &amp; Routing)</li>
+                <li>Parasitic Extraction</li>
+                <li>Device Modeling &amp; Parameter Extraction</li>
+                <li>GPDK045 / FreePDK45 (45nm CMOS)</li>
+                <li>LTspice</li>
+                <li>SPICE</li>
+                <li>Op-Amps</li>
+                <li>OTAs</li>
+                <li>Transimpedance Amplifiers</li>
+                <li>Current Mirrors</li>
+                <li>Differential Pairs</li>
+                <li>Device Mismatch &amp; CMRR</li>
+                <li>gm/ID Sizing</li>
+                <li>Frequency Compensation</li>
+                <li>Siemens L-Edit (Layout)</li>
+                <li>CMOS Process Flow (Litho / Etch / Sputter / Anneal)</li>
+                <li>Device Characterization (Keysight B1500A)</li>
+                <li>Wafer Probing (SENTIO)</li>
+                <li>SEM / AFM / SIMS Metrology</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>Hardware &amp; Embedded</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>Altium Designer</li>
+                <li>KiCad</li>
+                <li>STM32 (CubeIDE / CubeMX / HAL)</li>
+                <li>ESP32-P4 / ESP-IDF</li>
+                <li>Bare-Metal I&sup2;C Device Drivers</li>
+                <li>Arduino</li>
+                <li>FPGA (SystemVerilog)</li>
+                <li>Intel Quartus</li>
+                <li>ModelSim</li>
+                <li>BLDC Motor Control</li>
+                <li>LDOs</li>
+                <li>Soldering</li>
+                <li>Oscilloscopes</li>
+                <li>Logic Analyzers</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>Software</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>C / C++</li>
+                <li>Python (NumPy / SciPy / PyTorch)</li>
+                <li>Java</li>
+                <li>MATLAB</li>
+                <li>ROS2</li>
+                <li>Linux / Bash</li>
+                <li>Git</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>Agentic Engineering</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>Claude Code Agent Skills</li>
+                <li>MCP Tool Integration</li>
+                <li>EDA Workflow Automation</li>
+                <li><a href="https://github.com/JonathanLiu1401/eda-review" target="_blank"
+                    rel="noopener">eda-review</a></li>
+                <li><a href="https://github.com/JonathanLiu1401/multi-agentic-harness" target="_blank"
+                    rel="noopener">multi-agentic-harness</a></li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>CAD / Mechanical</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>Fusion360</li>
+                <li>OpenSCAD</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>Languages</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>English (Native)</li>
+                <li>Mandarin (Native)</li>
+                <li>Cantonese (Native)</li>
+                <li>Japanese (Working)</li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="skill-group">
+            <dt>Certifications</dt>
+            <dd>
+              <ul class="tag-list">
+                <li>MATLAB Certified (MathWorks, 2026)</li>
+                <li>International Baccalaureate Diploma (2024)</li>
+                <li>ABRSM Grade 8 Violin Performance</li>
+                <li>PADI Open Water Scuba Diver</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
     <!-- AWARDS -->
-    <section id="awards" class="section section-alt">
+    <section id="awards" class="section">
       <div class="container">
         <h2 class="section-title">Awards &amp; Activities</h2>
         <ul class="awards-list">
@@ -1249,7 +1290,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
+    <section id="contact" class="section section-alt">
       <div class="container contact-wrap">
         <h2 class="section-title">Contact</h2>
         <p class="contact-lead">

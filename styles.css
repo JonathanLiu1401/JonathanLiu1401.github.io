@@ -299,7 +299,9 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: inline-block; }
 }
 
 .prose p {
-  max-width: 70ch;
+  /* 68ch measure and looser leading keep long technical sentences scannable */
+  max-width: 68ch;
+  line-height: 1.72;
   color: var(--fg);
 }
 .prose p + p { margin-top: 1em; }
@@ -759,3 +761,34 @@ html[data-theme="dark"] .tag-list li { background: #1c1c20; }
 @media print {
   .project-figs { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ---------- Technical interests ---------- */
+.interest-grid {
+  display: grid;
+  gap: 1rem 1.6rem;
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+@media (min-width: 700px) {
+  .interest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.interest-group {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--hairline);
+}
+.interest-group dt {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+.interest-group dd {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.62;
+  max-width: 60ch;
+}
+
+.contact-lead { line-height: 1.7; }
