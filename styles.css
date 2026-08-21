@@ -226,6 +226,11 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: inline-block; }
   color: #fff;
   border-color: var(--accent);
 }
+/* `.primary-nav a` (0,1,1) outranks `.btn-resume` (0,1,0), so the label
+   inherited --fg on a --fg background and vanished in both themes. Match
+   that specificity to keep the inverted-pill contrast. */
+.primary-nav .btn-resume { color: var(--bg); }
+.primary-nav .btn-resume:hover { color: #fff; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -852,3 +857,73 @@ html[data-theme="dark"] .tag-list li { background: #1c1c20; }
   flex-shrink: 0;
 }
 .org-logo--onblack { background: #000; }
+
+/* Wordmark logos are wide, not square: let them keep their aspect ratio
+   inside a shorter plate instead of shrinking to fit a 26px box. */
+.org-logo--wide {
+  width: auto;
+  height: 22px;
+  max-width: 92px;
+  border-radius: 4px;
+  padding: 0 3px;
+}
+
+/* ---------- Education identity (logo + degree) ---------- */
+.edu-ident {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 0;
+}
+.edu-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 9px;
+  background: #fff;
+  border: 1px solid var(--border);
+  object-fit: contain;
+  padding: 3px;
+  flex-shrink: 0;
+}
+.edu-logo--onblack { background: #000; }
+.edu-logo--wide {
+  width: auto;
+  height: 34px;
+  max-width: 120px;
+  padding: 0 5px;
+}
+
+/* Partner / affiliate mark strip on a card */
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  margin: 0.9rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+.logo-strip-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0;
+  width: 100%;
+}
+.logo-strip img {
+  height: 34px;
+  width: auto;
+  max-width: 118px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 5px;
+}
+.logo-strip img.on-black { background: #000; }
+
+@media (max-width: 560px) {
+  .edu-logo { width: 34px; height: 34px; }
+  .logo-strip img { height: 24px; max-width: 84px; }
+}
