@@ -223,7 +223,8 @@
           <p>
             I interned as a Hardware Engineering Intern at Trellis Robotics, where I
             designed a 4-layer robotics peripheral PCB and a 4S high-side
-            battery-management front-end. During that internship I completed Hiroshima
+            battery-management front-end, wrote the robot's ESP32-P4 firmware, and built a
+            GPS-free pipe-localization system. During that internship I completed Hiroshima
             University's <a href="#upwards">UPWARDS intensive</a> on approved leave: CMOS
             layout in Siemens L-Edit, cleanroom fabrication at the Research Institute for
             Semiconductor Engineering, and wafer-probe characterization on a Keysight
@@ -269,43 +270,66 @@
               <p style="margin:0 0 0.6rem 0;">Full-time <strong>Hardware Engineering Intern</strong> at Trellis Robotics,
                 reporting directly under the CEO.</p>
               <ul class="bullets">
-                <li><strong>In-Pipe Robot PERIPH board</strong>: designed and validated a multi-rail peripheral PCB in
-                  <strong>KiCad 10</strong> for an In-Pipe inspection robot - dual brushed-DC motor drivers
-                  (<strong>DRV8234</strong>), <strong>TPSM33625</strong> 5&nbsp;V / 12&nbsp;V bucks, a
-                  <strong>TPS7A2033</strong> 3.3&nbsp;V LDO, dual <strong>MCP4725</strong> I&sup2;C DACs, and a 4S
-                  <strong>high-side</strong> battery-management front-end (<strong>TI BQ76922</strong>) with cell
-                  monitoring, Kelvin shunt current sensing, CHG/DSG protection FETs, and a reverse-polarity-protected
-                  charge port.
+                <li><strong>PERIPH-v2 board</strong>: designed a 4-layer, 50&nbsp;&times;&nbsp;40&nbsp;mm, 11-IC
+                  peripheral PCB in <strong>KiCad 10</strong> for an in-pipe inspection robot - dual
+                  <strong>DRV8234</strong> brushed-DC motor drivers, <strong>TPSM33625</strong> 5&nbsp;V / 12&nbsp;V
+                  bucks, a <strong>TPS7A2033</strong> 3.3&nbsp;V LDO, dual <strong>MCP4725</strong> I&sup2;C DACs, an
+                  encoder mux, an LED driver, and a <strong>MIC826</strong> watchdog - and released it to JLCPCB
+                  assembly.
                 </li>
-                <li><strong>ESP32-P4 firmware from scratch</strong>: wrote the complete robot-side firmware in
-                  <strong>C</strong> on <strong>ESP-IDF</strong> (~10k lines) - Wi-Fi station bring-up, an HTTP command
-                  service, a binary TLV telemetry task over UDP, hardware H.264 <strong>RTP</strong> video streaming,
-                  OTA update, and health/diagnostics endpoints.
+                <li><strong>High-side BMS redesign</strong>: rebuilt the 4S battery front end around a
+                  <strong>TI BQ76922</strong> with high-side CHG/DSG FETs, predischarge, a 33&nbsp;m&Omega; Kelvin
+                  shunt, a pack fuse, and a reverse-polarity-protected charge port, after root-causing a
+                  ground-split failure that destroyed rev-0 (BQ76920) boards on battery-only power-up.
                 </li>
-                <li><strong>Custom peripheral drivers</strong>: authored bare-metal I&sup2;C drivers for the
-                  <strong>DRV8234</strong> motor drivers, <strong>BQ76922</strong> battery monitor,
-                  <strong>MCP4725</strong> DACs, <strong>AS5600</strong> magnetic encoders, and a PCA9546 I&sup2;C
-                  multiplexer, with fault handling and watchdog-backed failsafes.
+                <li><strong>Bring-up without a respin</strong>: brought the board up the day it arrived with no
+                  hardware rework, then fixed wake-from-shutdown (OTP predischarge enable) and turned a slide switch
+                  into a true hardware power switch through <strong>BQ76922 OTP</strong> programming.
                 </li>
-                <li><strong>Base-host control stack</strong>: built the operator-side <strong>Python</strong>
-                  application end to end - an async HTTP/SSE API, telemetry decoding and caching, MediaMTX-backed
-                  <strong>WebRTC</strong> video, a browser dashboard, and an independent IMU bridge - closing the
-                  <strong>hardware &rarr; firmware &rarr; software</strong> loop. <strong>First-pass bring-up verified
-                    clean within one day</strong> of PCB arrival.
+                <li><strong>ESP32-P4 firmware from scratch</strong>: built the robot-side firmware in
+                  <strong>C</strong> on <strong>ESP-IDF</strong> (~20k lines) - Wi-Fi through ESP-Hosted, a leased
+                  HTTP command service, binary TLV telemetry over UDP with CRC-32, hardware H.264 <strong>RTP</strong>
+                  video from CSI and USB cameras (1080p at ~27&nbsp;fps), and UDP teleop with a 350&nbsp;ms deadman.
                 </li>
-                <li><strong>Agentic engineering</strong>: built custom <strong>Claude Code</strong> agent skills and
-                  <strong>MCP</strong> tooling directly into the PCB and software workflow - automated datasheet
-                  analysis, netlist and BOM/stock verification, manufacturability checks, and placement/routing review.
-                  Open-sourced as <a href="https://github.com/JonathanLiu1401/eda-review" target="_blank"
+                <li><strong>Peripheral drivers and failsafes</strong>: wrote I&sup2;C drivers for the
+                  <strong>DRV8234</strong>, <strong>BQ76922</strong>, <strong>MCP4725</strong>, <strong>AS5600</strong>
+                  encoders, the encoder mux, and the LED driver, with a hardware-watchdog chain that sleeps the motor
+                  drivers if the MCU hangs.
+                </li>
+                <li><strong>GPS-free pipe localization</strong>: architected a system that reconstructs the robot's
+                  3D path through metal pipe from only an industrial <strong>IMU</strong> and a tether-payout
+                  encoder - minimum-latency sync of two unsynchronized clocks, gravity-referenced inclination, gyro
+                  heading gated to statistically detected bends, and snapping to known fittings - reaching
+                  <strong>4.3&nbsp;cm RMS</strong> centerline error (against a 5.08&nbsp;cm bore radius) over 19 bench
+                  runs, backed by an 860-test regression suite.
+                </li>
+                <li><strong>Operator control stack</strong>: built the operator-side <strong>Python</strong>
+                  application - an async HTTP/SSE API, telemetry decoding, MediaMTX <strong>WebRTC</strong> video with
+                  an RTP reorder relay that ended periodic stream dropouts, gamepad teleop, and an in-dashboard wiki -
+                  closing the <strong>hardware &rarr; firmware &rarr; software</strong> loop.
+                </li>
+                <li><strong>LLM integration</strong>: shipped a grounded assistant inside the dashboard wiki -
+                  <strong>BM25</strong> retrieval over 6.7k code and doc chunks from five branches with precomputed
+                  embedding neighbors, free cloud models, and a second model that checks every answer against its
+                  sources and labels it, with links on where to verify.
+                </li>
+                <li><strong>PoE node and a caught erratum</strong>: designed the schematic for a PoE motor and IMU node
+                  (TPS2378 class 4, dual DRV8874, SCH16T), and measured with tshark that an ESP32 sourcing the RMII
+                  reference clock with Wi-Fi on corrupts ~2% of frames, flagging the fix before fabrication.
+                </li>
+                <li><strong>Agentic engineering</strong>: built <strong>Claude Code</strong> agent skills and
+                  <strong>MCP</strong> tooling into the PCB and software workflow - datasheet analysis, netlist and
+                  BOM/stock verification, JLCPCB manufacturability checks, and placement/routing review. Open-sourced
+                  as <a href="https://github.com/JonathanLiu1401/eda-review" target="_blank"
                     rel="noopener">eda-review</a> and <a href="https://github.com/JonathanLiu1401/multi-agentic-harness"
                     target="_blank" rel="noopener">multi-agentic-harness</a>.
                 </li>
-                <li><strong>Layout &amp; DFM</strong>: iterating through full ERC/DRC and JLCPCB manufacturability
-                  sweeps using the <code>kicad-cli</code> and <code>pcbnew</code> Python API - current-aware via sizing
-                  per IPC-2221, adversarial footprint-vs-datasheet audits across every IC, and thermal-pad / via netting
+                <li><strong>Layout &amp; DFM</strong>: ran full ERC/DRC and JLCPCB manufacturability sweeps with
+                  <code>kicad-cli</code> and the <code>pcbnew</code> Python API - current-aware via sizing per
+                  IPC-2221, adversarial footprint-vs-datasheet audits across every IC, and thermal-pad / via netting
                   for proper ground and heat paths.</li>
                 <li><strong>Design-spec deliverable</strong>: authored a build-guide-style LaTeX/CircuiTikZ design spec
-                  for the BMS iteration-2 (master switch, XT30 port, charger-detect wake) with a verified BOM and
+                  for the BMS iteration-2 (master switch, charge port, charger-detect wake) with a verified BOM and
                   circuit fragments referenced against the IC datasheets.</li>
                 <li><strong>Pre-internship prep</strong>: built a <strong>ROS2</strong> camera-streaming system on a
                   Raspberry Pi 4 with a custom 2-layer SMD carrier PCB ahead of the start date.</li>
