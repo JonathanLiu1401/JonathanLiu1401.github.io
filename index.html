@@ -295,8 +295,9 @@
                   encoder mux, and an LED driver, plus a hardware-watchdog chain that sleeps the motor drivers within
                   2.4&nbsp;s if the MCU hangs.
                 </li>
-                <li><strong>GPS-free 3D pipe localization</strong>: engineered a system that reconstructs a robot's 3D path
-                  through metal pipe from only an industrial <strong>IMU</strong> and a tether encoder - minimum-latency
+                <li><strong>Novel GPS-free 3D pipe localization</strong>: developed a system that maps a robot's 3D path
+                  through metal pipe with <strong>no GPS, no compass, and no fixed sensor mount</strong>, using only a
+                  free-floating industrial <strong>IMU</strong> and a tether encoder - minimum-latency
                   sync of two independent clocks, gravity-referenced inclination, gyro heading gated to statistically
                   detected bends, and snapping to known fittings - achieving <strong>4.3&nbsp;cm RMS accuracy</strong>
                   (inside a 5.08&nbsp;cm bore radius) over 19 runs, backed by an 860-test regression suite.
@@ -307,10 +308,11 @@
                   <strong>hardware &rarr; firmware &rarr; software</strong> loop. Authored ~1,570 of ~1,600 commits across
                   the robot's firmware and software repositories.
                 </li>
-                <li><strong>LLM integration</strong>: shipped a source-grounded AI assistant inside the operator dashboard -
-                  <strong>BM25</strong> retrieval over 6,700+ code and doc chunks from five branches with precomputed
-                  embedding neighbors, free cloud models, and a second model that fact-checks every answer against its
-                  sources and labels it, with links on where to verify.
+                <li><strong>Company-wide AI engineering assistant</strong>: built a source-grounded assistant inside the
+                  operator dashboard that <strong>onboarded the entire company</strong> onto the robot software stack -
+                  a <strong>Qwen3-Embedding-4B</strong> semantic graph plus <strong>BM25</strong> retrieval over 6,700+
+                  code and doc chunks from five branches, free cloud models, and a second model that fact-checks every
+                  answer against its sources and labels it, with links on where to verify.
                 </li>
                 <li><strong>Pre-fabrication erratum catch</strong>: designed a schematic for a PoE motor and IMU node
                   (TPS2378 class 4, dual DRV8874, SCH16T) and measured with tshark that an ESP32 sourcing its Ethernet
