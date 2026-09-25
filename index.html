@@ -222,9 +222,9 @@
           </p>
           <p>
             I interned as a Hardware Engineering Intern at Trellis Robotics, where I
-            designed a 4-layer robotics peripheral PCB and a 4S high-side
-            battery-management front-end, wrote the robot's ESP32-P4 firmware, and built a
-            GPS-free pipe-localization system. During that internship I completed Hiroshima
+            designed a 4-layer motor-control and lithium battery PCB, built the robot's
+            entire control stack from scratch, and developed a GPS-free system that maps a
+            robot's path through metal pipe. During that internship I completed Hiroshima
             University's <a href="#upwards">UPWARDS intensive</a> on approved leave: CMOS
             layout in Siemens L-Edit, cleanroom fabrication at the Research Institute for
             Semiconductor Engineering, and wafer-probe characterization on a Keysight
@@ -270,68 +270,45 @@
               <p style="margin:0 0 0.6rem 0;">Full-time <strong>Hardware Engineering Intern</strong> at Trellis Robotics,
                 reporting directly under the CEO.</p>
               <ul class="bullets">
-                <li><strong>Robot motor-control and battery PCB</strong>: designed a 4-layer, 50&nbsp;&times;&nbsp;40&nbsp;mm,
-                  11-IC board in <strong>KiCad 10</strong> from scratch - dual <strong>DRV8234</strong> motor drivers,
-                  <strong>TPSM33625</strong> 12&nbsp;V / 5&nbsp;V bucks, a <strong>TPS7A2033</strong> 3.3&nbsp;V LDO, dual
-                  <strong>MCP4725</strong> DACs, an encoder mux, an LED driver, a <strong>MIC826</strong> watchdog, and a 4S
-                  battery-management system - owning schematic, layout, DFM, and JLCPCB assembly end to end.
+                <li><strong>Robot motor-control and battery PCB, designed end to end</strong>: designed a 4-layer,
+                  11-IC board in <strong>KiCad</strong> from schematic to JLCPCB fabrication - dual
+                  <strong>DRV8234</strong> motor drivers, 12&nbsp;V / 5&nbsp;V / 3.3&nbsp;V power rails, and a 4S lithium
+                  battery-management system. Diagnosed a failure that destroyed two prototypes, re-architected the
+                  battery protection around a high-side <strong>TI BQ76922</strong>, and brought the redesign up
+                  <strong>the day it arrived with zero rework</strong>, finishing its power features in firmware without a
+                  board respin.
                 </li>
-                <li><strong>Failure analysis and BMS redesign</strong>: diagnosed a ground-split failure mode that destroyed
-                  two first-revision boards on battery-only power-up, then re-architected the 4S battery-management system
-                  around a <strong>high-side TI BQ76922</strong> (high-side CHG/DSG FETs, predischarge, 33&nbsp;m&Omega;
-                  Kelvin shunt, pack fuse, reverse-polarity-protected charge port), eliminating the failure mode.
+                <li><strong>Entire robot control stack, built from scratch</strong>: developed
+                  <strong>20,000+ lines of C firmware</strong> for an <strong>ESP32-P4</strong> robot controller (motor,
+                  battery, and sensor drivers; a hardware-watchdog motor failsafe; <strong>1080p video at 27&nbsp;fps</strong>),
+                  an Ethernet-to-Wi-Fi network bridge on an ESP32-S3, and a browser operator dashboard with live
+                  <strong>WebRTC</strong> video, telemetry, and gamepad control. Authored ~1,570 of ~1,600 commits across the
+                  robot's firmware and software.
                 </li>
-                <li><strong>Same-day bring-up, zero rework</strong>: brought up a redesigned board the day it arrived with no
-                  hardware rework, then fixed wake-from-shutdown and turned a slide switch into a true hardware power switch
-                  through <strong>BQ76922 OTP</strong> programming, <strong>avoiding a board respin</strong>.
+                <li><strong>Novel GPS-free 3D localization</strong>: developed a system that maps a robot's 3D path through
+                  metal pipe with <strong>no GPS, no compass, and no fixed sensor mount</strong>, using only a
+                  free-floating motion sensor (<strong>IMU</strong>) and the length of tether paid out. It syncs two
+                  independent clocks and detects pipe bends statistically, reaching <strong>4.3&nbsp;cm RMS accuracy</strong>
+                  over 19 test runs, backed by an 860-test regression suite.
                 </li>
-                <li><strong>20,000+ lines of robot firmware</strong>: developed an ESP32-P4 robot controller's firmware from
-                  scratch in <strong>C</strong> on <strong>ESP-IDF</strong> - Wi-Fi through ESP-Hosted, a leased HTTP command
-                  service, binary TLV telemetry over UDP with CRC-32, hardware H.264 <strong>RTP</strong> video from CSI and
-                  USB cameras (<strong>1080p at ~27&nbsp;fps</strong>), and UDP teleop with a 350&nbsp;ms deadman.
+                <li><strong>Company-wide AI engineering assistant</strong>: built an assistant inside the operator dashboard
+                  that <strong>onboarded the entire company</strong> onto the robot software stack. It answers from 6,700+
+                  code and document chunks using a <strong>Qwen3-Embedding-4B</strong> semantic graph and keyword search,
+                  and a second AI model fact-checks every answer against its sources.
                 </li>
-                <li><strong>Drivers and failsafes for 6 peripheral ICs</strong>: wrote I&sup2;C drivers for the
-                  <strong>DRV8234</strong>, <strong>BQ76922</strong>, <strong>MCP4725</strong>, <strong>AS5600</strong>, an
-                  encoder mux, and an LED driver, plus a hardware-watchdog chain that sleeps the motor drivers within
-                  2.4&nbsp;s if the MCU hangs.
+                <li><strong>Hardware bug caught before fabrication</strong>: designed a schematic for a Power-over-Ethernet
+                  motor and sensor board, then measured that its ESP32 clocking scheme corrupts ~2% of network frames
+                  when Wi-Fi is on, flagging the fix before any boards were made.
                 </li>
-                <li><strong>Novel GPS-free 3D pipe localization</strong>: developed a system that maps a robot's 3D path
-                  through metal pipe with <strong>no GPS, no compass, and no fixed sensor mount</strong>, using only a
-                  free-floating industrial <strong>IMU</strong> and a tether encoder - minimum-latency
-                  sync of two independent clocks, gravity-referenced inclination, gyro heading gated to statistically
-                  detected bends, and snapping to known fittings - achieving <strong>4.3&nbsp;cm RMS accuracy</strong>
-                  (inside a 5.08&nbsp;cm bore radius) over 19 runs, backed by an 860-test regression suite.
-                </li>
-                <li><strong>Full-stack operator software</strong>: built a Python operator application - an async HTTP/SSE API,
-                  telemetry decoding, MediaMTX <strong>WebRTC</strong> video with an RTP reorder relay that ended periodic
-                  stream dropouts, gamepad teleop, and an in-dashboard wiki - closing the
-                  <strong>hardware &rarr; firmware &rarr; software</strong> loop. Authored ~1,570 of ~1,600 commits across
-                  the robot's firmware and software repositories.
-                </li>
-                <li><strong>Company-wide AI engineering assistant</strong>: built a source-grounded assistant inside the
-                  operator dashboard that <strong>onboarded the entire company</strong> onto the robot software stack -
-                  a <strong>Qwen3-Embedding-4B</strong> semantic graph plus <strong>BM25</strong> retrieval over 6,700+
-                  code and doc chunks from five branches, free cloud models, and a second model that fact-checks every
-                  answer against its sources and labels it, with links on where to verify.
-                </li>
-                <li><strong>Pre-fabrication erratum catch</strong>: designed a schematic for a PoE motor and IMU node
-                  (TPS2378 class 4, dual DRV8874, SCH16T) and measured with tshark that an ESP32 sourcing its Ethernet
-                  reference clock with Wi-Fi on corrupts ~2% of frames, flagging the fix before fabrication.
-                </li>
-                <li><strong>Agentic engineering</strong>: built <strong>Claude Code</strong> agent skills and
-                  <strong>MCP</strong> tooling into a PCB and software workflow - datasheet analysis, netlist and
-                  BOM/stock verification, JLCPCB manufacturability checks, and placement/routing review. Open-sourced
-                  as <a href="https://github.com/JonathanLiu1401/eda-review" target="_blank"
+                <li><strong>Open-source AI tooling for PCB design</strong>: built <strong>Claude Code</strong> agent skills and
+                  <strong>MCP</strong> tools that check schematics, BOM stock, and manufacturability automatically.
+                  Open-sourced as <a href="https://github.com/JonathanLiu1401/eda-review" target="_blank"
                     rel="noopener">eda-review</a> and <a href="https://github.com/JonathanLiu1401/multi-agentic-harness"
                     target="_blank" rel="noopener">multi-agentic-harness</a>.
                 </li>
-                <li><strong>Layout &amp; DFM</strong>: ran full ERC/DRC and JLCPCB manufacturability sweeps with
-                  <code>kicad-cli</code> and the <code>pcbnew</code> Python API - current-aware via sizing per
-                  IPC-2221, adversarial footprint-vs-datasheet audits across every IC, and thermal-pad / via netting
-                  for solid ground and heat paths.</li>
-                <li><strong>Design specification</strong>: authored a build-guide-style LaTeX/CircuiTikZ design spec
-                  for a second-iteration BMS (master switch, charge port, charger-detect wake) with a verified BOM and
-                  circuit fragments referenced against the IC datasheets.</li>
+                <li><strong>Design documentation</strong>: authored a build-guide-style LaTeX design specification for a
+                  second-generation battery system and an operator wiki used to run and maintain the robot.
+                </li>
                 <li><strong>Pre-internship prep</strong>: built a <strong>ROS2</strong> camera-streaming system on a
                   Raspberry Pi 4 with a custom 2-layer SMD carrier PCB ahead of the start date.</li>
               </ul>
