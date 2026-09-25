@@ -278,6 +278,13 @@
                   <strong>the day it arrived with zero rework</strong>, finishing its power features in firmware without a
                   board respin.
                 </li>
+                <li><strong>Power-over-Ethernet robot node, prototype schematic</strong>: designed a schematic for a next-generation
+                  robot node powered over a single Ethernet cable - PoE class-4 power (<strong>TPS2378</strong>), a 12&nbsp;V
+                  motor buck, dual <strong>DRV8874</strong> motor drivers, and an industrial <strong>IMU</strong> - sizing
+                  motor current limits so two stalled motors stay inside the <strong>25.5&nbsp;W</strong> power budget. Then
+                  measured that the ESP32 clocking scheme corrupts ~2% of network frames when Wi-Fi is on, catching the
+                  bug <strong>before fabrication</strong>.
+                </li>
                 <li><strong>Entire robot control stack, built from scratch</strong>: developed
                   <strong>20,000+ lines of C firmware</strong> for an <strong>ESP32-P4</strong> robot controller (motor,
                   battery, and sensor drivers; a hardware-watchdog motor failsafe; <strong>1080p video at 27&nbsp;fps</strong>),
@@ -295,10 +302,6 @@
                   that <strong>onboarded the entire company</strong> onto the robot software stack. It answers from 6,700+
                   code and document chunks using a <strong>Qwen3-Embedding-4B</strong> semantic graph and keyword search,
                   and a second AI model fact-checks every answer against its sources.
-                </li>
-                <li><strong>Hardware bug caught before fabrication</strong>: designed a schematic for a Power-over-Ethernet
-                  motor and sensor board, then measured that its ESP32 clocking scheme corrupts ~2% of network frames
-                  when Wi-Fi is on, flagging the fix before any boards were made.
                 </li>
                 <li><strong>Open-source AI tooling for PCB design</strong>: built <strong>Claude Code</strong> agent skills and
                   <strong>MCP</strong> tools that check schematics, BOM stock, and manufacturability automatically.
